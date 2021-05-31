@@ -65,3 +65,52 @@ public class ProblemSloving {
 		}
 	}
 }
+
+//Eunji if문
+
+import java.util.*;
+
+public class ProblemSloving {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("연도를 입력해주시오.");
+		int year = sc.nextInt();
+		if(year%4 == 0 &&(year% 100 != 0 || year%400 == 0))
+			System.out.println(1);
+		else
+			System.out.println(0);
+	}
+}
+
+//Eunji while문
+
+import java.util.*;
+
+public class ProblemSloving {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		int fir = 0;
+		int sec = 0;
+		int sum = 0;
+		int cnt = 0;
+		int temp = n;
+		while(true) {
+
+			fir = temp%10;
+			sec = temp/10;
+			sum = fir+sec;
+
+			temp = sum%10 + fir*10;
+			cnt++;
+			if(n == temp)
+				break;
+		}
+		System.out.println(cnt);
+	}
+}
