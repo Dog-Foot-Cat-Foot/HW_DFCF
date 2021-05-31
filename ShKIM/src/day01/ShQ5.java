@@ -1,4 +1,4 @@
-package ex.java.study;
+package day01;
 
 public class ShQ5 {
 

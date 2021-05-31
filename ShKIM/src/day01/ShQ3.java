@@ -1,4 +1,4 @@
-package ex.java.study;
+package day01;
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class ShQ3 {
 		String[] weightArray = new String[num];
 		double sum = 0;
 		
-		System.out.println("입력해 주세요.");
+		System.out.println("6명의 몸무게를 입력해 주세요.");
 		weightArray = sc.nextLine().split(" ");
 		
 		for(int i = 0; i < num; i++) {
