@@ -26,7 +26,7 @@ public class EjQ4 {
 			avg = 0;
 			stuCnt = 0;
 			
-			if(num < 1 && num > 1000) {
+			if(num < 1 || num > 1000) {
 				System.out.println("1이상, 1000이하의 숫자를 입력해 주세요.");
 				i--;
 				continue;
