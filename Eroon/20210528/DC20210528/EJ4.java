@@ -7,29 +7,45 @@ public class EJ4 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int C = scan.nextInt();
-		int N =0;
-		int[] score=new int[N];
+		System.out.println("테스트 케이스 수를 입력하세요.");
+		int c = scan.nextInt(); //테스트 케이스의 
 		
-		for(int i = 0; i<C; i++) {
-			N = scan.nextInt();
-			for(int j = 0; j<N; j++) {
-				 score[j] = scan.nextInt();
-			}
-		}
+		int temp = 0;
+		double count = 0;
 		int sum = 0;
-		int avg = 0;
-		int num = 0;
+		double avg = 0;
+		double[] students = new double[c]; //각 케이스마 평균 점수가 넘는 학생들의 비
 		
-		for(int i = 0; i<C; i++) {
-			for(int j=0; j< N; j++) {
-				sum += score[j];
+		
+		for(int i = 0; i<c; i++) {
+			int n = scan.nextInt();
+			if(1 <= n && n <= 1000) {
+				int[] score = new int[n];
+				for(int j = 0; j<n; j++) {
+					temp = scan.nextInt();
+					if(0 <= temp && temp <= 100) {
+						score[j] = temp;
+						sum += score[j];
+					}
+				}
+				avg = sum/n;
+				for(int j =0; j<n; j++) {
+					if(score[j]>avg) {
+						count++;
+					}
+				}
+				students[i] = (count/n)*100;
+			}else {
+				System.out.println("1이상, 1000이하의 숫자를 입력해 주세요.");
+				i--;
+				continue;
 			}
-			avg = sum/N;
-			if(avg<score[i]) {
-				num +=1;
-			}
-			System.out.println(num/N*100);
+			temp = 0;
+			sum = 0;
+			count = 0;
+		}
+		for(int i=0; i< students.length;i++) {
+			System.out.printf("%.3f%%\n", students[i]);
 		}
 	}
 }
