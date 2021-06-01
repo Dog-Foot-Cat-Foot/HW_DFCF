@@ -109,7 +109,35 @@ public class Tobot {
 }
 
 ## 4
+import java.util.Scanner;
 
+public class BadukEx {
+
+	public static void main(String[] args) {
+		// 바둑 : 이현
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("흰돌의 갯수를 입력하세요 : ");
+		int n = scanner.nextInt();				
+
+		int arr[][] = new int[19][19];
+		
+		for(int i = 1; i<=n; i++) {
+			int x = scanner.nextInt();
+			int y = scanner.nextInt();
+			
+			arr[x-1][y-1]=1;
+			
+		}
+		for(int i = 0; i< arr.length; i++) {
+			for(int j = 0; j< arr.length; j++)
+				System.out.print(arr[i][j]);
+				System.out.println();
+		}
+		
+	}
+
+}
 
 
 ## 5
