@@ -37,9 +37,9 @@ public class MjQ1 {
 				a = i;
 			}
 
-			if (a == 0 || b == 0) {
+			if (a % 3 != 0 && (a == 0 || b == 0 )) {
 				System.out.print(i + " ");
-			} else if (a % 3 == 0 && b % 3 == 0) {
+			} else if (a % 3 == 0 && (b % 3 == 0 && b != 0)) {
 				System.out.print("XX ");
 			} else if (a % 3 == 0 || b % 3 == 0) {
 				System.out.print("X ");
