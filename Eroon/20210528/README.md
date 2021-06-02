@@ -13,7 +13,8 @@
 
 ![다차원배열](https://user-images.githubusercontent.com/77269204/120450841-cffa5900-c3cb-11eb-8705-77e1655e72db.png)
 
-![함수](https://user-images.githubusercontent.com/77269204/120451020-ffa96100-c3cb-11eb-8788-f006297273c4.png)
+![함수](https://user-images.githubusercontent.com/77269204/120451994-de954000-c3cc-11eb-8a38-021e51da5818.png)
+
 
 
 
