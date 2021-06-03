@@ -1,4 +1,4 @@
-package day01;
+package day0528;
 
 public class ErQ5 {
 
