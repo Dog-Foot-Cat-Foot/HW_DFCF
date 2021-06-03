@@ -23,7 +23,7 @@ public class MJTest2 {
 		
 		for(int i = 0; i < 1; i++) {
 			
-			int user = scanner.nextInt(); //숫자로 가위,바위,보 입력
+			int user = scanner.nextInt();
 			if(user == 1) {
 				System.out.println("[유저: 가위]");
 			}
@@ -38,26 +38,29 @@ public class MJTest2 {
 				break;
 			}
 			
-			int com = (int)(Math.random()*3)+1; //랜덤함수로 컴퓨터가 가위,바위,보 나오게
+			int com = (int)(Math.random()*3)+1;
 			if(com == 1) {
 				System.out.println("[컴퓨터: 가위]");
 			}
 			else if(com == 2) {
 				System.out.println("[컴퓨터: 바위]");
 			}
-			else {
+			else if(com == 3) {
 				System.out.println("[컴퓨터: 보]");
 			}
 				
-			if(user == com) { //유저와 컴퓨터 비교
+			if(user == com) {
 				System.out.println("비겼습니다.");
 			}
-			else if(user > com) {
+			else if((user==1&&com==3)||(user==2&&com==1)||(user==3&&com==2)){
 				System.out.println("이겼습니다.");
 			}
-			else {
+			else if((user==1&&com==2)||(user==2&&com==3)||(user==3&&com==1)) {
 				System.out.println("졌습니다.");
 			}
+			
 		}
+		
 	}
+
 }
