@@ -1,0 +1,49 @@
+//Eroon 문제 1번
+import java.util.*;
+
+public class ProblemSloving {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int cnt = 0;
+		int X = sc.nextInt();
+		String[][] arr = new String[10][10];
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 0; j < arr.length; j++) {
+				arr[i][j] = (i+1)+"/"+(j+1); //각 배열의문자 넣기
+				cnt++;
+				if(X==cnt) // X번째일때 배열 출력
+					System.out.println(arr[i][j]);
+			}
+		}
+	}
+}
+
+//Eroon 문제 2번
+import java.util.*;
+
+public class ProblemSloving {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("숫자를 입력하시오.");
+		while(true) {
+			int	N = sc.nextInt(); //숫자의 개수
+			if(1<N && 100>=N) {
+
+				String[] num = new String[N];
+				num = sc.next().split(""); //String으로 된 연속된숫자를 각 배열에 하나씩 저장
+				int sum = 0;
+				for(int i = 0; i<num.length; i++) {// 저장된 배열 합
+					sum += Integer.parseInt(num[i]);
+				}
+				System.out.println(sum);
+				break;
+				}
+			else
+				System.out.println("숫자를 다시 입력하시오.");
+		}
+	}
+}

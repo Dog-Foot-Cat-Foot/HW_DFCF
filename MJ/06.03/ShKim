@@ -1,0 +1,42 @@
+//ShKim 1번 문제
+import java.util.*;
+
+class Solution {
+	Scanner sc = new Scanner(System.in);
+
+	int i,j,k;
+	int arr[] = {1,5,2,6,3,7,4};
+	int result [] = new int[50];
+
+	public void solution() {
+
+	}
+	public void setReturn(int i,int j, int k) {
+		this.i = i;
+		this.j = j;
+		this.k = k;
+		int result[] = new int[j-i+1];
+		this.result = result;
+		int a = 0;
+		for(int l = i-1; l<j; l++) {
+			result[a] = arr[l];
+			a++;
+		}
+		Arrays.sort(result,0,result.length);
+	}
+	public int getReturn() {
+		return result[k-1];
+	}
+
+}
+
+public class ProblemSloving {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		Solution so = new Solution();
+		so.setReturn(2, 5, 3);
+		System.out.println(so.getReturn());
+	}
+}
