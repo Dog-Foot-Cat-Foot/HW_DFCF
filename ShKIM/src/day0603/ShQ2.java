@@ -26,13 +26,16 @@ public class ShQ2 {
 		int result = n - lost.length;
 		int num = reserve.length;
 		int size = 0, size2 = 0;
-
+		
+		// ArrayList에 담기
 		List<Integer> lostArray = new ArrayList<>();
 		List<Integer> reserveArray = new ArrayList<>();
 
+		// 값 정렬해서 복사하기
 		Arrays.stream(lost).sorted().forEach(c -> lostArray.add(c));
 		Arrays.stream(reserve).sorted().forEach(c -> reserveArray.add(c));
 
+		// 여벌있는데 도난당한 경우
 		for (int l : lostArray) {
 			size = 0;
 			for (int r : reserveArray) {
@@ -48,11 +51,13 @@ public class ShQ2 {
 			size2++;
 		}
 
+		// 0인 값 배열에서 삭제
 		lostArray.remove(Integer.valueOf(0));
 		reserveArray.remove(Integer.valueOf(0));
 
 		size2 = 0;
 
+		// 빌려주기
 		for (int l : lostArray) {
 			size = 0;
 			for (int r : reserveArray) {
