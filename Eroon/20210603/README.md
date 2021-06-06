@@ -1,6 +1,5 @@
 **못 푼 문제**
 - 이현 1
-- 은지 2
 - 소희 1, 2
 
 ![image](https://user-images.githubusercontent.com/77269204/120453859-57e16280-c3ce-11eb-9c81-9eebd29d8c87.png)
