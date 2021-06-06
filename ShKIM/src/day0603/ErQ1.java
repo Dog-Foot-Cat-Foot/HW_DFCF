@@ -8,6 +8,7 @@ public class ErQ1 {
 
 	}
 
+	// 분수 문제
 	public static String function(int x) {
 		// 배열에 숫자 대입
 		int[] a = { 1, 1, 2, 3, 2, 3, 4, 5, 4 };
