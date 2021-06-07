@@ -1,5 +1,6 @@
 package DC20210603;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SH1 {
@@ -20,12 +21,13 @@ public class SH1 {
 	    	int[] arrayCopy = new int[len]; // 정렬해서 저장할 배열을 생성 
 	    	
 	    	//배열 자르기 
-	    	//(원본, 어느 부분부터 읽을지, 복사할 소스, 복사본에서 자료를 받을 때 어느부분부터 쓸 지,원본에서 복사본으로 읽어올 데이터 길)
+	    	//(원본, 어느 부분부터 읽을지, 복사할 소스, 복사본에서 자료를 받을 때 어느부분부터 쓸 지,원본에서 복사본으로 읽어올 데이터 길이)
 	    	System.arraycopy(array,commands[i][0]-1, arrayCopy, 0, len);
 	    	
 	    	int temp = 0;// 버블 정렬할 때 사용할 변수 선언
 	    	
 	    	//배열 오름차순 정렬하기
+	    	/*
 	    	for(int j = 0; j<len; j++) {
 	    		for(int k = 0;k<len-j-1; k++) {
 	    			if(arrayCopy[k]>arrayCopy[k+1]) {
@@ -35,6 +37,10 @@ public class SH1 {
 	    			}
 	    		}
 	    	}
+	    	*/
+	    	//오름차순 버블정렬 매소드 
+	    	Arrays.sort(arrayCopy);
+	    	
 	    	answer[i] = arrayCopy[commands[i][2]-1];
 	    }
 	    
