@@ -1,5 +1,7 @@
 package day0603;
 
+import java.util.Arrays;
+
 public class ShQ1 {
 
 	public static void main(String[] args) {
@@ -30,16 +32,20 @@ public class ShQ1 {
 			System.arraycopy(array, commands[k][0] - 1, arrayCopy, 0, length);
 
 			// 배열 오름차순 정렬하기, 버블버블
-			while (cnt < length) {
-				for (int i = 0; i < length - cnt; i++) {
-					if (arrayCopy[i] > arrayCopy[i + 1]) {
-						temp = arrayCopy[i];
-						arrayCopy[i] = arrayCopy[i + 1];
-						arrayCopy[i + 1] = temp;
-					}
-				}
-				cnt++;
-			}
+//			while (cnt < length) {
+//				for (int i = 0; i < length - cnt; i++) {
+//					if (arrayCopy[i] > arrayCopy[i + 1]) {
+//						temp = arrayCopy[i];
+//						arrayCopy[i] = arrayCopy[i + 1];
+//						arrayCopy[i + 1] = temp;
+//					}
+//				}
+//				cnt++;
+//			}
+//			
+			// sort() 메서드 사용
+			Arrays.sort(arrayCopy);
+			
 
 			// k번째 수 구하기
 			result[k] = arrayCopy[commands[k][2] - 1];
