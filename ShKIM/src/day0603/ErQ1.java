@@ -11,8 +11,8 @@ public class ErQ1 {
 
 	// 분수 문제 다시 푼다
 	public static String function2(int x) {
-		int a = 0; // 분모
-		int b = 0; // 분자
+		int a = 0; 
+		int b = 0; 
 		int size = 1; // 체크
 		String result = "";
 		int num = 0;
