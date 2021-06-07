@@ -1,24 +1,71 @@
 //Eroon 문제 1번
+package Practical;
+
 import java.util.*;
 
 public class ProblemSloving {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
-		int cnt = 0;
 		int X = sc.nextInt();
-		String[][] arr = new String[10][10];
-		for(int i = 0; i < arr.length; i++) {
-			for(int j = 0; j < arr.length; j++) {
-				arr[i][j] = (i+1)+"/"+(j+1); //각 배열의문자 넣기
-				cnt++;
-				if(X==cnt) // X번째일때 배열 출력
-					System.out.println(arr[i][j]);
+		int x = 0;
+		int y = 1;
+		int cnt = 3;
+
+		for(int i = 1; i < 100; i++) {
+			int j=0;
+			if(X == 1) {
+				System.out.println(1+"/"+1);
+				break;
+			}
+			if(X == 2) {
+				System.out.println(1+"/"+2);
+				break;
+			}
+			if(y == 0) {
+				while(j == 0) {//y가 0일때 y증가 x감소
+					x--;
+					y++;
+					if(X == cnt) {
+						System.out.println((x+1) + "/" + (y+1));
+						j=1;
+					}
+					cnt++;
+					if(x==0) {// x가 0일때 다시 y증가
+						y++;
+						j=1;
+						if(X == cnt) {
+							System.out.println((x+1) + "/" + (y+1));
+							j=1;
+						}
+						cnt++;
+					}
+				}
+			}
+			if(x == 0) { // x가 0일때 x증가 y감소
+				while(j == 0) {
+					x++;
+					y--;
+					if(X == cnt) {
+						System.out.println((x+1) + "/" + (y+1));
+						j=1;
+					}
+					cnt++;
+					if(y==0) { // y가 0일때 다시 x증가
+						x++;
+						j=1;
+						if(X == cnt) {
+							System.out.println((x+1) + "/" + (y+1));
+							j=1;
+						}
+						cnt++;
+					}
+				}
 			}
 		}
 	}
 }
+
 
 //Eroon 문제 2번
 import java.util.*;
