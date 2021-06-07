@@ -1,20 +1,24 @@
 package day0603;
 
-public class ErQ1 {
+import java.util.Scanner;
+
+class ErQ1 {
 
 	public static void main(String[] args) {
 
-		System.out.println(function2(14));
+		Scanner sc = new Scanner(System.in);
+		long x = sc.nextInt();
+		System.out.println(function2(x));
 
 	}
 
 	// 분수 문제 다시 푼다
-	public static String function2(int x) {
+	public static String function2(long x) {
 		int a = 0;
 		int b = 0;
 		int size = 1; // 체크
 		String result = "";
-		int num = 0;
+		long num = 0;
 
 		while (num < x) {
 			// 홀수
