@@ -29,7 +29,7 @@ public class ErQ2 {
 		}
 
 		// 반복
-		while (n > -1) {
+		while (array.size() > 1) {
 			if (isCheck) {
 				array.remove(0);
 				isCheck = false;
@@ -38,7 +38,6 @@ public class ErQ2 {
 				array.add(temp);
 				isCheck = true;
 			}
-			n--;
 		}
 
 		result = array.get(0);
