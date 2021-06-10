@@ -25,8 +25,8 @@ public class MjQ2 {
 
 		for (int i = 3; i < n; i++) {
 			sum = a + b;
-			b = a;
-			a = sum;
+			a = b;
+			b = sum;
 			array.add(sum);
 		}
 
