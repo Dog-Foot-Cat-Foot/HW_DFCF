@@ -21,7 +21,7 @@ public class ErQ1 {
 				answer = -1;
 				break;
 			} else if (num2 % 2 == 0) { // 짝수
-				num2 = num2/2;
+				num2 = num2 / 2;
 			} else if (num2 % 2 != 0) { // 홀수
 				num2 = 3 * num2 + 1;
 			}
