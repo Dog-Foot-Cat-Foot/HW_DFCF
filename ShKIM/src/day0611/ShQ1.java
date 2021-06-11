@@ -10,10 +10,8 @@ public class ShQ1 {
 	
 	// 각 자릿수 합을 구하여 리턴
 	
-	// int 길이 구하는 메서드 : (int)(Math.log10(num) + 1)
 	public static int solution(int n) {
 		int answer = 0;
-		int length = (int)(Math.log10(n) + 1); // 자릿수
 		int temp = n;
 		
 		while(temp != 0) {
