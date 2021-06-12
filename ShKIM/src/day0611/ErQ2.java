@@ -17,32 +17,17 @@ public class ErQ2 {
 	// 문자열 포함 여부 반환 메서드 : contains()
 
 	public static int solution(int n) {
-		int length = (int) (Math.log10(n) + 1);
-		StringBuilder buffer = new StringBuilder(); // 앞 자리
 
-		// 다시 풀기!!!
-		// 6660, 6661 인 경우도 고려해야 함
-
-		int cnt = 0;
+		int cnt = 1;
 		int answer = 0;
 
 		for (int i = 666; cnt <= n; i++) {
-			if (cnt == n) {
-				answer = i;
-			} else if ("666".contains(Integer.toString(i))) {
-				System.out.println("i :" + i);
+			if (("" + i).contains("666")) { // 666이 포함될 경우
 				cnt++;
+				answer = i;
 			}
 		}
 
-		/*
-		 * if (n % 10 == 1) { buffer.append("66"); } else if (n % 10 == 0) {
-		 * buffer.append("966"); length--; } else { buffer.append((n % 10 - 1) + "66");
-		 * }
-		 * 
-		 * // length 길이만큼 "6" buffer에 추가 while (length > 0) { buffer.append("6");
-		 * length--; }
-		 */
 		return answer;
 	}
 
