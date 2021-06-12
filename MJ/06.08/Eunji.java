@@ -9,9 +9,6 @@ public class Main {
 		int h = sc.nextInt();
 		int w = sc.nextInt();
 		
-		int[][] arr = new int[w][h];
-		int cnt = 0;
-		
 		for(int i = 0; i < w; i++) {
 			for(int j =0; j< h; j++) {
 				if((i == 0 && j ==0)||(i==0&&j==h-1)||
