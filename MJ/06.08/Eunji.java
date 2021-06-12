@@ -26,3 +26,20 @@ public class Main {
 		}
 	}
 }
+
+//Eunji Q2
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i = 1; i < 10; i++) {
+			for(int j = 2; j <6; j++)
+				System.out.print(j + " * " + i + " = " + (j*i) +"\t");
+			System.out.println();
+		}	
+	}
+}
+
