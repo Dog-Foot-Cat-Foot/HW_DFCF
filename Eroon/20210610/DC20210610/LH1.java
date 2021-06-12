@@ -10,7 +10,7 @@ public class LH1 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
-		int result= 0;
+		long result= 0;
 		
 		if(n < 1|| n>8000000) {
 			System.out.println("범위를 벗어났습니다. ");
@@ -21,7 +21,7 @@ public class LH1 {
 
 	}
 
-	public static int solution(int num) {
+	public static int solution(long num) {
 		int answer = 0;
 	    while(num!=1) { 
 	          if(num%2==0) { // 짝수일 때 
