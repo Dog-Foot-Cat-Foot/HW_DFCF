@@ -28,5 +28,30 @@ public class Main {
 		int arr[] = {2,1,3,4,1};
 		System.out.println(solution(arr));
 	}
-
 }
+
+//SHKIM Q2
+import java.util.*;
+
+public class Main {
+
+	public static String solution(String s) {
+		String answer = "";
+		String[] arr = s.split("");
+		if(arr.length%2 ==0) {
+			answer = arr[arr.length/2-1]+arr[arr.length/2];
+		}
+		else if(arr.length%2 ==1) {
+			answer = arr[arr.length/2];
+		}
+		return answer;
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = "abcde";
+		String a = "qwer";
+		System.out.println(solution(a));
+	}
+}
+
