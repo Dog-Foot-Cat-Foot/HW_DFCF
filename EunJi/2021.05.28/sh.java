@@ -92,6 +92,33 @@ public class WeightEx {
 }
 
 ## 4
+package kr.java.study210528;
+
+import java.util.Scanner;
+
+public class ClassEx {
+
+	public static void main(String[] args) {
+		// 호식이네 제기차기 : 소희
+		Scanner scanner = new Scanner(System.in);
+		
+		int[][] clas = new int[4][3];	//배열 선언
+		int sum[] = new int[4];
+		
+		for(int i = 0; i < 4; i++ ) {		//1~4반 반복
+			System.out.print((i+1)+"class?");
+			for(int j = 0; j < 3; j++) {
+				int num = scanner.nextInt();
+				clas[i][j] = num;
+				sum[i] += clas[i][j];	
+			}
+		}
+		for(int i = 0; i < 4; i++)
+			System.out.println((i+1)+"class : "+sum[i]);
+	}
+}
+
 
 ## 5
+
 
