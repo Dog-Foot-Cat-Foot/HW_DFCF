@@ -1,2 +1,2 @@
-SELECT MAX(datetime) "½Ã°£"
+SELECT MAX(datetime) "ì‹œê°„"
 FROM animal_ins
