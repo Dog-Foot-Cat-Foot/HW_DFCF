@@ -1,4 +1,4 @@
-elect
+select
     cus_no
     , cus_name
     ,floor((to_number(to_char(sysdate,'YYYY'))
