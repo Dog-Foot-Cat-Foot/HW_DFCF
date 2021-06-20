@@ -1,5 +1,5 @@
 이현 Q1
-```
+```sql
 select
     cus_no        "고객번호"
     ,cus_name     "고객명"
@@ -13,7 +13,7 @@ from
     customer;
 ```
 이현 Q2
-```
+```sql
 select
     cus_no        "고객번호"
     ,cus_name     "고객명"
@@ -25,7 +25,7 @@ order by
     tel_num;
 ```
 이현 Q3
-```
+```sql
 select
     cus_no        "고객번호"
     ,cus_name     "고객명"
@@ -41,14 +41,14 @@ order by
     desc;
  ```
 명진 Q1
-```
+```sql
 select
     count(distinct(mgr_emp_no))
 from
     employee;
 ```
 명진 Q2
-```
+```sql
 select
     trunc(to_number(to_char(sysdate,'yyyy'))
     -to_number(case
@@ -67,7 +67,7 @@ from
     customer
 ```
 은지 Q1
-```
+```sql
 select
     emp_no
     ,emp_name
@@ -78,7 +78,7 @@ from
     employee
 ```
 은지 Q2
-```
+```sql
 select
     emp_no
     ,emp_name
@@ -89,7 +89,7 @@ from
     employee
 ```
 소희 Q1
-```
+```sql
 select
     animal_id
 from
@@ -98,7 +98,7 @@ where
     name is null
 ```
 소희 Q2
-```
+```sql
 select
     max(datetime)
 from
