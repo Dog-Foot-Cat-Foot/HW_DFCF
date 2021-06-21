@@ -1,0 +1,8 @@
+SELECT
+   ANIMAL_ID
+   , NAME
+   , to_char(DATETIME, 'YYYY-MM-DD')
+FROM
+    ANIMAL_INS
+ORDER BY
+    ANIMAL_ID asc;
