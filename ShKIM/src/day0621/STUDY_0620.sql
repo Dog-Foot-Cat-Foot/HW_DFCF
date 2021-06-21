@@ -1,10 +1,10 @@
--- ¼ÒÈñ
+
 -- 1
 SELECT COUNT(DISTINCT name)
 FROM animal_ins
 
 -- 2
-SELECT animal_id, name, TO_CHAR(datetime, 'YYYY-MM-DD') ³¯Â¥
+SELECT animal_id, name, TO_CHAR(datetime, 'YYYY-MM-DD') Â³Â¯Ã‚Â¥
 FROM animal_ins
 ORDER BY animal_id
 
