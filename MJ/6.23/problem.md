@@ -48,7 +48,7 @@ select
 from
     employee e1 , salary_grade s
 where
-    e1.emp_no in (select e2.mgr_emp_no from employee e2 where e2.salary>=3000)
+    e1.mgr_emp_no in (select e2.emp_no from employee e2 where e2.salary>=3000)
     and
     (e1.salary between s.min_salary and s.max_salary)
 ```
