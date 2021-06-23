@@ -1,0 +1,9 @@
+SELECT
+    o.ANIMAL_ID
+FROM
+    ANIMAL_OUTS o left outer join ANIMAL_INS i
+ON
+    i.ANIMAL_ID = o.ANIMAL_ID
+WHERE
+    i.ANIMAL_ID is null
+ORDER BY 1;
