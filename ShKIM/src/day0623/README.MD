@@ -7,14 +7,18 @@
 ### [ㅊㅈ](https://programmers.co.kr/learn/courses/30/lessons/59042?language=oracle)
 
 ## 2.
+![image](https://user-images.githubusercontent.com/82145134/123038981-5551b600-d42c-11eb-8400-2c9c799d6985.png)
+![image](https://user-images.githubusercontent.com/82145134/123038996-5c78c400-d42c-11eb-932d-206d0cdd9a66.png)
 
 
-### [ㅊㅈ]()
+### [ㅊㅈ](https://programmers.co.kr/learn/courses/30/lessons/59043)
 
-## 3.
+## 3. 상위 3개의 레코드 추출 SQL : FETCH FIRST 3 ROWS ONLY
+![image](https://user-images.githubusercontent.com/82145134/123040537-df9b1980-d42e-11eb-8b81-6bb4e0901c90.png)
+![image](https://user-images.githubusercontent.com/82145134/123040563-ef1a6280-d42e-11eb-8d7d-f38a44cbb964.png)
 
 
-### [ㅊㅈ]()
+### [ㅊㅈ](https://programmers.co.kr/learn/courses/30/lessons/59044)
 
 
 
@@ -29,10 +33,12 @@
 
   
 ### 2
+![image](https://user-images.githubusercontent.com/82145134/123039039-70242a80-d42c-11eb-8cf8-c07ec50bd0ec.png)
   
   
   
 ### 3
+![image](https://user-images.githubusercontent.com/82145134/123040587-f80b3400-d42e-11eb-8769-fe6d73a057eb.png)
 
 </div>
 </details>
