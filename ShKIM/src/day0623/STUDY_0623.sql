@@ -65,10 +65,22 @@ WHERE c.emp_no = e.emp_no(+) AND e.salary BETWEEN s.min_salary(+) AND s.max_sala
 ORDER BY cus_no DESC;
 
 -- 3. 연봉 3000이상인 직원의 부하직원들의 직원번호, 직원명, 연봉, 연봉등급을 출력하라.(서브쿼리)
+-- ORACLE JOIN
 SELECT e2.emp_no, e2.emp_name, e2.salary, s.sal_grade_no
 FROM employee e1, employee e2, salary_grade s
-WHERE e1.emp_no = e2.mgr_emp_no AND e2.salary >= 3000
+WHERE e1.emp_no = e2.mgr_emp_no AND e1.salary >= 3000
         AND e2.salary BETWEEN s.min_salary AND s.max_salary
+ORDER BY 1 ;
+
+-- SUBQUERY
+SELECT
+        emp_no       직원번호
+        , emp_name   직원명
+        , salary     연봉
+        , (SELECT s.sal_grade_no FROM salary_grade s WHERE
+                    e1.salary BETWEEN s.min_salary AND s.max_salary ) 연봉등급
+FROM employee e1
+WHERE (SELECT e2.salary FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no) >= 3000
 
 -- 승태
 -- 1. '임꺽정'보다 늦게 입사한 직원의 이름,입사일을 검색하시오.
