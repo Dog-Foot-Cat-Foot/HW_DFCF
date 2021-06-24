@@ -149,3 +149,13 @@ from employee e left outer join customer c
 on e.emp_no = c.emp_no
 group by e.jikup
 order by  decode(jikup, '사장' , 1, '부장' , 2, '과장' , 3, '대리', 4,  5 ) asc;
+-------------------------------------------------
+ select
+    e.jikup           "직급"
+    ,count(distinct e.emp_no)   "직급직원수"
+    ,count(c.emp_no)   "직급담당고객수"
+from employee e , customer c
+where e.emp_no = c.emp_no(+)
+group by e.jikup
+order by  decode(jikup, '사장' , 1, '부장' , 2, '과장' , 3, '대리', 4,  5 ) asc;
+-----------------------------------------------------------------------------------
