@@ -101,8 +101,31 @@ FROM employee e
 WHERE (SELECT COUNT(*) FROM customer c WHERE c.emp_no = e.emp_no) = 1
 
 -- Q3. 직급명, 직급직원수, 직급담당고객수 검색.
-SELECT jikup, COUNT(DISTINCT e.emp_no), COUNT(c.emp_no)
+-- ORACLE JOIN
+SELECT
+        jikup                       직급명
+        , COUNT(DISTINCT e.emp_no)  직급직원수
+        , COUNT(c.emp_no)           직급담당고객수
 FROM employee e, customer c
 WHERE e.emp_no = c.emp_no(+)
 GROUP BY jikup
 ORDER BY DECODE(jikup, '사장', 1, '부장', 2, '과장', 3, '대리', 4, 5);
+
+-- ANSI JOIN
+SELECT
+        jikup                       직급명
+        , COUNT(DISTINCT e.emp_no)  직급직원수
+        , COUNT(c.emp_no)           직급담당고객수
+FROM employee e LEFT OUTER JOIN customer c ON e.emp_no = c.emp_no
+GROUP BY jikup
+ORDER BY DECODE(jikup, '사장', 1, '부장', 2, '과장', 3, '대리', 4, 5);
+
+-- SUBQUERY
+SELECT
+        DISTINCT jikup   직급명
+        , (SELECT COUNT(*) FROM employee e2 WHERE e.jikup = e2.jikup) 직급직원수
+        , (SELECT COUNT(*) FROM employee e2, customer c WHERE e2.emp_no = c.emp_no
+                                    AND e2.jikup = e.jikup ) 직급담당고객수
+FROM employee e
+ORDER BY DECODE(jikup, '사장', 1, '부장', 2, '과장', 3, '대리', 4, 5);
+
