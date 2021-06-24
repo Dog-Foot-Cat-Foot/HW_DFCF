@@ -160,4 +160,4 @@ where
     e.emp_no = c.emp_no(+)
 group by
     e.jikup
-    ```
+```
