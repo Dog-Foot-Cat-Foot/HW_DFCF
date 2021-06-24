@@ -51,4 +51,16 @@ where
     e1.mgr_emp_no in (select e2.emp_no from employee e2 where e2.salary>=3000)
     and
     (e1.salary between s.min_salary and s.max_salary)
+-------------------------------------------------------------------------------
+select
+    e1.emp_no "직원번호"
+    ,e1.emp_name "직원명"
+    ,e1.salary "연봉"
+    ,(select sal_grade_no 
+    from salary_grade s 
+    where e1.salary between s.min_salary and s.max_salary) "연봉등급"
+from
+    employee e1
+where
+    e1.mgr_emp_no in (select e2.emp_no from employee e2 where e2.salary>=3000)
 ```
