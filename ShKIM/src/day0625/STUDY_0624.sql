@@ -33,4 +33,18 @@ WHERE (SELECT e2.emp_no FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no AND e2.
 ORDER BY 입사순위 DESC;
 
 
--- 3. 부서위치별
+-- 3. 직속상관보다 연봉이 높은 부하직원이 있을 경우
+-- 얼마나 더 받는지 보여주세요.
+-- 부하직원명, 직급, 연봉, 직속상관명, 직속상관연봉, 연봉차이를 보여주세요.
+-- 서브쿼리로 풀어주세요
+SELECT
+       e1.emp_name   부하직원명
+       , e1.jikup    직급
+       , e1.salary   연봉
+       , (SELECT e2.emp_name FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no)   직속상관명
+       , (SELECT e2.salary FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no)     직속상관연봉
+       , (SELECT e1.salary - e2.salary FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no)  연봉차이
+FROM
+        employee e1
+WHERE
+        (SELECT e2.salary FROM employee e2 WHERE e2.emp_no = e1.mgr_emp_no) < e1.salary
