@@ -49,4 +49,15 @@ order by
 ### [직급], [직원수], [담당고객수]
 ### 단, 낮은 직급이 먼저 나오게 하시오.
 ```sql
+select
+    e1.jikup
+    ,(select count(*) from employee e2 where e1.jikup = e2.jikup ) "직원수"
+    ,(select count(*) from employee e2,customer c where e2.emp_no = c.emp_no
+                                                        and e2.jikup = e1.jikup) "담당고객수"
+from
+    employee e1
+group by
+    e1.jikup 
+order by
+    decode(e1.jikup,'사장',1,'부장',2,'과장',3,'대리',4,5 ) desc;   
 ```
