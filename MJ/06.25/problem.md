@@ -2,6 +2,32 @@
 ### [직원번호], [직원명], [근무년차], [퇴직일까지 남은 년도], [소속부서명], [직속상관명],[직속상관 담당고객 인원수]
 ### 단, 모든 직원 다 나오고, 직급 높은 먼저 나오고 직급이 같으면 나이가 많은 사람이 나와야함.
 ```Sql
+select
+    e1.emp_no                    "직원번호"
+    ,e1.emp_name                 "직원명"
+    ,round(((sysdate-e1.hire_date)/365),1) "근무년차"
+    ,60-(to_number(to_char(sysdate,'yyyy'))
+        -to_number(
+            case
+                    when substr(e1.jumin_num,7,1)='1' then '19'
+                    when substr(e1.jumin_num,7,1)='2' then '19'
+                    else '20'
+            end||substr(e1.jumin_num,1,2)
+        )+1)||'년' "퇴직일까지 남은년도"
+    ,to_char(to_date(decode(substr(e1.jumin_num,7,1),'1','19','2','19','20')
+        ||substr(e1.jumin_num,1,6),'yyyymmdd'),'yyyy"년"mm"월"dd"일"dy"요일"','nls_date_language=korean')"생일"
+    ,d.dep_name "소속부서명"
+    ,(select e2.emp_name from employee e2 where e2.emp_no = e1.mgr_emp_no)"직속상관명"
+    ,(select count(*)
+     from employee e2,customer c 
+      where e2.emp_no = c.emp_no and e1.emp_no = e2.mgr_emp_no)"담당고객인원수"
+from
+    employee e1,dept d
+where
+    d.dep_no = e1.dep_no 
+order by 
+   decode(e1.jikup,'사장',6,'부장',5,'과장',4,'대리',3,'주임',2,1) desc
+   ,decode(e1.jumin_num,'1','19','2','19','20')||substr(e1.jumin_num,1,6);
 ```
 ### 2. 부서별 직원들의 입사년대 출력하시오
 ### [부서이름], [부서위치], [입사년대]
