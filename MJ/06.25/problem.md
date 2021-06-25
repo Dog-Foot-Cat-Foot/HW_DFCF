@@ -6,7 +6,7 @@ select
     e1.emp_no                    "직원번호"
     ,e1.emp_name                 "직원명"
     ,round(((sysdate-e1.hire_date)/365),1) "근무년차"
-    ,60-(to_number(to_char(sysdate,'yyyy'))
+    ,65-(to_number(to_char(sysdate,'yyyy'))
         -to_number(
             case
                     when substr(e1.jumin_num,7,1)='1' then '19'
@@ -14,8 +14,6 @@ select
                     else '20'
             end||substr(e1.jumin_num,1,2)
         )+1)||'년' "퇴직일까지 남은년도"
-    ,to_char(to_date(decode(substr(e1.jumin_num,7,1),'1','19','2','19','20')
-        ||substr(e1.jumin_num,1,6),'yyyymmdd'),'yyyy"년"mm"월"dd"일"dy"요일"','nls_date_language=korean')"생일"
     ,d.dep_name "소속부서명"
     ,(select e2.emp_name from employee e2 where e2.emp_no = e1.mgr_emp_no)"직속상관명"
     ,(select count(*)
