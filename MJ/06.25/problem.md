@@ -32,6 +32,18 @@ order by
 ### 2. 부서별 직원들의 입사년대 출력하시오
 ### [부서이름], [부서위치], [입사년대]
 ```sql
+select
+    d.dep_name
+    ,d.loc
+    ,trunc(to_number(to_char(e.hire_date,'yyyy')),-1)"입사연대"
+from
+    dept d, employee e 
+where
+    d.dep_no = e.dep_no
+group by
+    dep_name,loc,trunc(to_number(to_char(e.hire_date,'yyyy')),-1)
+order by
+    1
 ```
 ### 3. 직급별 담당고객수를 출력하시오.
 ### [직급], [직원수], [담당고객수]
