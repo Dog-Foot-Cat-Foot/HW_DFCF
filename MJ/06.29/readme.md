@@ -86,7 +86,7 @@ select
 		,(select s.sal_grade_no from employee e, salary_grade s where e.emp_no = c.emp_no and e.salary between s.min_salary and s.max_salary)   "담당직원연봉등급"
 		,(select e1.emp_name from employee e, employee e1 where e.emp_no = c.emp_no and e.mgr_emp_no = e1.emp_no)     "담당직원직속상관명"
 		,(select d.dep_name from employee e, employee e1, dept d where e.emp_no = c.emp_no and e.mgr_emp_no = e1.emp_no and e1.dep_no = d.dep_no)      "담당직원직속상관직급"
-		,(select s.sal_grade_no from employee e, employee e1, salary_grade s where e.emp_no = c.emp_no and e.mgr_emp_no = e1.emp_no and e1.salary between s.min_salary and s.max_salary)   "직속상관연봉등급"
+		,(select s.sal_grade_no from employee e, employee e1, salary_grade s where e.emp_no = c.emp_no and e.mgr_emp_no = e1.emp_no and e1.salary between 			s.min_salary and s.max_salary)   "직속상관연봉등급"
 from
 		(select rownum RNUM, c1.* from customer c1, employee e where e.emp_no(+) = c1.emp_no order by e.salary) c
 where
