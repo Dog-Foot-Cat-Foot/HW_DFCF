@@ -50,12 +50,14 @@ SELECT  z.* FROM (
 
 
 
-### 4.
+### 4. 직속상관이 있는 직원 중 입사일 순으로 정렬하였을 경우 3행부터 8행까지 검색하면? 직원번호, 직원명, 부서번호, 부서명, 직급, 연봉, 연봉등급, 입사일을 보여주세요. 입사일은 "년-월-일 (요일) x/4분기" 형식으로 보여주세요. 입사일 순으로 보여주세요.
 
 
 <details>
 <summary>정답</summary>
 <div markdown="1">    
+ 
+![image](https://user-images.githubusercontent.com/82145134/123628677-54ff5380-d84e-11eb-964f-82dd5258bc35.png)
   
   
 </div>
