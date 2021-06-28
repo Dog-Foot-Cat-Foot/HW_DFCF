@@ -35,12 +35,14 @@ SELECT  z.* FROM (
 </details>
 
 
-### 3.
+### 3. 고객 나이 순으로 정렬하였을 경우 3행부터 8행까지 검색하면? 고객번호, 고객명, 고객나이, 담당직원번호, 담당직원명, 직급, 담당직원부서명, 부서위치를 보여주세요. 고객 나이순으로 보여주세요.
 
 
 <details>
 <summary>정답</summary>
 <div markdown="1">    
+  
+![image](https://user-images.githubusercontent.com/82145134/123625938-3cda0500-d84b-11eb-81a7-635c0cc4fd70.png)
   
   
 </div>
