@@ -10,7 +10,7 @@
 <summary>정답</summary>
 <div markdown="1">    
   
-  ### 취소, 완료, 입력, 수정, 삭제, rollback, commit
+  ###  정답 : 취소, 완료, 입력, 수정, 삭제, rollback, commit
   
 </div>
 </details>
@@ -21,7 +21,7 @@
 <summary>정답</summary>
 <div markdown="1">    
   
- ### from
+ ### 정답 : from
   
 </div>
 </details>
