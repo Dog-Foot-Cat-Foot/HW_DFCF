@@ -5,7 +5,9 @@
 <details>
 <summary>정답</summary>
 <div markdown="1">    
+  
   SELECT 결과물에서 n행씩 끊어서 화면에 보여주는 것을 말한다.
+  
 </div>
 </details>
 
@@ -23,9 +25,12 @@ SELECT  z.* FROM (
 
 <details>
 <summary>정답</summary>
-<div markdown="1">    
+<div markdown="1">   
+  
   검색 결과 없음
+  
   이유는? WHERE절에서 ROWNUM을 1을 넣었을 때 FALSE가 나오는 조건이 있다면 조건이 성립되지 않는다.
+  
 </div>
 </details>
 
