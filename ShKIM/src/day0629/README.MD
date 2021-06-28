@@ -5,7 +5,7 @@
 <details>
 <summary>정답</summary>
 <div markdown="1">    
-  SELECT 결과물에서 n행씩 끊어서 화면에 보여주는 것
+  SELECT 결과물에서 n행씩 끊어서 화면에 보여주는 것을 말한다.
 </div>
 </details>
 
