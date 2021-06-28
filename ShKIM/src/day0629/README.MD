@@ -29,7 +29,7 @@ SELECT  z.* FROM (
   
   검색 결과 없음
   
-  이유는? WHERE절에서 ROWNUM을 1을 넣었을 때 FALSE가 나오는 조건이 있다면 조건이 성립되지 않는다.
+  이유는? WHERE절에서 ROWNUM을 1 넣었을 때 FALSE가 나오는 조건이 있다면 조건이 성립되지 않는다.
   
 </div>
 </details>
