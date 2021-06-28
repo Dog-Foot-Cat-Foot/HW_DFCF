@@ -28,3 +28,28 @@ SELECT  z.* FROM (
   이유는? WHERE절에서 ROWNUM을 1을 넣었을 때 FALSE가 나오는 조건이 있다면 조건이 성립되지 않는다.
 </div>
 </details>
+
+
+#### 3.
+
+
+<details>
+<summary>정답</summary>
+<div markdown="1">    
+  
+  
+</div>
+</details>
+
+
+
+#### 4.
+
+
+<details>
+<summary>정답</summary>
+<div markdown="1">    
+  
+  
+</div>
+</details>
