@@ -150,7 +150,7 @@ inner join, outer join, self join, cross join
 A. from, B. subquery, C. inline view
 
 은지 Q3
-
+```sql
 select
 	c.cus_no "고객번호"
 	,c.cus_name "고객명"
@@ -182,3 +182,4 @@ select
           		  and e2.salary between s.min_salary and s.max_salary)||'','없음')"직속상관연봉등급"
 from
 	customer c
+```
