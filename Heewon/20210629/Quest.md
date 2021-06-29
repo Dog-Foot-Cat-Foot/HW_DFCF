@@ -1,12 +1,12 @@
 b_no		-> 게시판 글 고유번호 
 
-subject  		-> 글 제목	              글쓴이가
+subject  	-> 글 제목	              글쓴이가
 writer 		-> 글쓴이 이름
 content		-> 글내용
 pwd		-> 암호
 email		-> 이메일
 
-reg_date 		-> 등록일                	db가
+reg_date 	-> 등록일               	db가
 readcount	-> 조회수
 
 group_no			
@@ -40,7 +40,7 @@ print_level	-> 같은 그룹번호 내에서 댓글  들여쓰기 레벨 단계 
 -
 
 
- 문제 1-1 OX 문제
+ 문제 1-1. OX 문제
 
  - 게시판 내의 게시글 작성 순서에 따라 부여받은 고유번호는 PK값으로 지정한다.
 
