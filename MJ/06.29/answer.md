@@ -11,7 +11,7 @@
 3!!
 
 이현 Q3
-
+```sql
 select 
 	*
 from
@@ -27,9 +27,9 @@ from
 			decode(substr(jumin_num,7,1),'1','19','2','19','20')||substr(jumin_num,1,6) desc) e
 	where rownum<=20)
 where RNUM >=11
-
+```
 이현 Q4
-
+```sql
 select
 	m.month||'월' "생일월"
 	,(select count(*)
@@ -65,7 +65,7 @@ group by
    	m.month
 order by
     	m.month
-
+```
 소희 Q1
 
 페이징 처리란?
