@@ -34,3 +34,10 @@ where
   
   
 -- 4번 문제
+
+select rownum, e.*
+from
+	(select * from employee
+	order by salary desc) e
+where
+	rownum<=15;
