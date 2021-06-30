@@ -5,8 +5,8 @@
  공지사항과 필독사항에 관한 게시글이다.
       다음 게시판 구조 중 
   "글제목", "글쓴이", "등록일", "조회수"를 출력하면?
-  
-  ![화면 캡처 2021-06-30 180353](https://user-images.githubusercontent.com/84062322/123940283-f8c63c00-d9d3-11eb-9469-ffa9afcafd89.png)
+![화면 캡처 2021-06-30 202903](https://user-images.githubusercontent.com/84062322/123953204-ed7a0d00-d9e1-11eb-9d9e-953a2c2b9e49.png)
+
 
   
   
