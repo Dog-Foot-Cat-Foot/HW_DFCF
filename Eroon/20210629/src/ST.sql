@@ -16,3 +16,6 @@ ORDER BY SAL_AVG DESC;
 --> from -> where -> group by -> having -> select -> order by
 
 -- 2번 문제 
+2번
+
+-- 3번 문제
