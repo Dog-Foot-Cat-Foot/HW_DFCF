@@ -218,3 +218,70 @@ where
                     from employee 
                     where dep_no =10)
 ```
+
+지언 Q1
+```sql
+select
+    	dep_no
+   	,jikup
+	,count(*) "직원수"
+	,max(salary) "최대 연봉"
+	,min(salary) "최소 연봉"
+	,sum(salary) "합 연봉"
+	,trunc(avg(salary),1) "평균 연봉"
+from
+	employee
+group by
+    rollup(dep_no, jikup)
+```
+지언 Q2
+```sql
+select
+    dep_no
+    ,jikup
+	,count(*) "직원수"
+	,max(salary) "최대 연봉"
+	,min(salary) "최소 연봉"
+	,sum(salary) "합 연봉"
+	,trunc(avg(salary),1) "평균 연봉"
+from
+	employee
+group by
+    cube(dep_no, jikup)
+order by
+    dep_no
+```
+지언 Q3
+
+()
+
+지언 Q4
+
+WITH CHECK OPTION
+
+희원 Q1
+
+group_no : 게시판 글의 소속 그룹번호
+print_no : 같은 그룹번호 내에서 화면 출력 순서 번호
+print_level : 같은 그룹번호 내에서 댓글 들여쓰기 레벨 단계 번호
+
+희원 Q2
+
+X
+
+희원 Q3
+
+WITH READ ONLY
+생성된 뷰는 읽기만 가능하다.
+WITH CHECK OPTION
+뷰의 where 구문 조건에 위배되는 방향으로 INSERT, UPDATE 작업은 불가
+
+희원 Q4
+```sql
+insert into employee(
+emp_no, emp_name, dep_no, jikup, hire_date, jumin_num, phone, mgr_emp_no
+)
+values(
+emp_sq.nextval, '김김김', 35, '대리', 3000, '2012-02-28', '89110911093', '01091499215',2
+)
+```
