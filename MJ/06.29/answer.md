@@ -183,3 +183,38 @@ select
 from
 	customer c
 ```
+승태 Q1
+
+FROM - WHERE - GROUP BY - HAVING - SELECT - ORDER BY
+
+승태 Q2
+
+(2)
+
+승태 Q3
+```sql
+select
+    emp_name
+    ,dep_no
+from
+    employee
+where
+    dep_no = (select dep_no 
+                from employee 
+                where emp_name = '류명한')
+```
+
+승태 Q4
+```sql
+select
+	emp_no
+	,emp_name
+	,salary
+from
+	employee
+where
+	dep_no != 10 
+    and salary in (select salary 
+                    from employee 
+                    where dep_no =10)
+```
