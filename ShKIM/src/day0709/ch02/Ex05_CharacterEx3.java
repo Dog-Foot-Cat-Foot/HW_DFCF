@@ -1,6 +1,6 @@
 package day0709.ch02;
 
-public class CharacterEx3 {
+public class Ex05_CharacterEx3 {
 
 	public static void main(String[] args) {
 		

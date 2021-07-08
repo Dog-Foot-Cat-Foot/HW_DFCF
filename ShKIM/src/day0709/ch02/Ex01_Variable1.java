@@ -2,7 +2,7 @@
 package day0709.ch02;
 
 // Variable1 이라는 이름으로 클래스 생성
-public class Variable1 {
+public class Ex01_Variable1 {
 	
 	// main()은 자바 프로그램의 첫 시작을 나타내는 함수
 	public static void main(String[] args) {

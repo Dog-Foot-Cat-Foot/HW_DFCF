@@ -1,6 +1,6 @@
 package day0709.ch02;
 
-public class DoubleEx1 {
+public class Ex06_DoubleEx1 {
 
 	public static void main(String[] args) {
 		

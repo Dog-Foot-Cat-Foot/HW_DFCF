@@ -1,6 +1,6 @@
 package day0709.ch02;
 
-public class Variable2 {
+public class Ex02_Variable2 {
 
 	public static void main(String[] args) {
 		
