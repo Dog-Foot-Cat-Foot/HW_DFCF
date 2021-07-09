@@ -17,6 +17,7 @@ public class Ex05_OperationEx5 {
 		// num의 데이터 00000101 출력
 		System.out.println(num);  // 5
 		
+		// 변수 num 에 num
 		num = num << 2;
 		System.out.println(num);
 
