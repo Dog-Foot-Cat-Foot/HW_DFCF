@@ -31,7 +31,7 @@ public class Student {
 	
 	// 함수 반환형: void (없음)
 	// 함수명: setStudentName
-	// 매개변수: String형 데이터
+	// 매개변수: String name
 	// 기능: 매개변수로 받은 String형 데이터를 studentName 멤버 변수에 대입함
 	public void setStudentName(String name) {
 		studentName = name;
