@@ -18,7 +18,7 @@ public class Ex05_BasicLoop {
 		num += 9;
 		num += 10;
 		
-		System.out.println("1부터 10까지의 합은 " + num + "임");
+		System.out.println("1부터 10까지의 합은 " + num + "임"); // 55
 
 	}
 
