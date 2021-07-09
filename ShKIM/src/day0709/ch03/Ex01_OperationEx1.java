@@ -22,6 +22,10 @@ public class Ex01_OperationEx1 {
 		// 데이터 (double)80.0 대입
 		double avgScore = totalScore / 2.0;
 		System.out.println(avgScore); // 출력: 80.0
+		
+		/*
+		 * 산술 연산자
+		 */
 
 	}
 
