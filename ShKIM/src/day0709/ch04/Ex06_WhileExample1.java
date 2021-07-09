@@ -10,7 +10,7 @@ public class Ex06_WhileExample1 {
 		int num = 1;
 		int sum = 0;
 		
-		// while문의 조건식이 true 인 경우 while() 블록 안의 문장 반복 수행
+		// while문의 조건식이 true 인 경우 while문 블록 안의 문장 반복 수행
 		// 조건식이 false 인 경우 반복 수행 종료
 		// 11 <= 10 인 경우 종료, 즉 num의 데이터가 11인 경우 수행 종료
 		while(num <= 10) {
