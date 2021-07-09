@@ -12,7 +12,7 @@ public class Ex06_WhileExample1 {
 		
 		// while문의 조건식이 true 인 경우 while문 블록 안의 문장 반복 수행
 		// 조건식이 false 인 경우 반복 수행 종료
-		// 11 <= 10 인 경우 종료, 즉 num의 데이터가 11인 경우 수행 종료
+		// 11 <= 10 인 경우 종료
 		while(num <= 10) {
 			sum += num;  // sum = sum + num 으로 sum 변수에 sum+num 데이터 대입
 			num++;		 // num = num + 1
@@ -28,7 +28,9 @@ public class Ex06_WhileExample1 {
 		
 		/*
 		 * while문
-		 * 조건식이 true 동안 수행문을 반복해서 수행
+		 * while(조건식){ 수행문1; }
+		 * 조건식이 true인 동안 수행문을 반복해서 수행
+		 * 조건의 true/false에 따라 반복문이 수행하는 경우 적합
 		 */
 
 	}
