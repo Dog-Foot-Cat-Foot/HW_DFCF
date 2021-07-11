@@ -3,6 +3,7 @@ package day0709.ch05;
 public class Ex04_PersonTest {
 
 	public static void main(String[] args) {
+		
 		// Person()을 생성자라 한다
 		Person personLee = new Person();
 

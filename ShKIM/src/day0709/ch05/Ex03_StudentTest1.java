@@ -9,7 +9,9 @@ public class Ex03_StudentTest1 {
 		Student student1 = new Student();
 		// student1 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
 		// "김석진" String 객체의 메모리 위치 주소값을 대입
-		student1.studentName = "김석진";
+		// student1.studentName = "김석진";
+		student1.setStudentName("김석진");
+		
 		// student1 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
 		// getStudentName() 메서드 호출하여 리턴받은 데이터 출력
 		System.out.println(student1.getStudentName()); // 김석진
@@ -19,7 +21,9 @@ public class Ex03_StudentTest1 {
 		Student student2 = new Student();
 		// student2 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
 		// "박지민" String 객체의 메모리 위치 주소값을 대입
-		student2.studentName = "박지민";
+		// student2.studentName = "박지민";
+		student2.setStudentName("박지민");
+		
 		// student2 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
 		// getStudentName() 메서드 호출하여 리턴받은 데이터 출력
 		System.out.println(student2.getStudentName()); // 박지민
