@@ -1,6 +1,6 @@
 package day0713.ch06;
 
-public class TakeTrans {
+public class Ex03_TakeTrans {
 
 	public static void main(String[] args) {
 		
