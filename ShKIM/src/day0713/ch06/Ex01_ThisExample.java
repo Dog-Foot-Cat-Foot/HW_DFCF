@@ -11,7 +11,7 @@ class BirthDay {
 	// 태어난 연도를 지정하는 메서드
 	public void setYear(int year) {
 		// bDay.year = year; 와 같음
-		// 생성된 인스턴스의 맴버 변수에 매개변수로 받은 데이터 대입
+		// 인스턴스의 생성 시 맴버 변수에 매개변수로 받은 데이터 대입
 		this.year = year;
 	}
 	
