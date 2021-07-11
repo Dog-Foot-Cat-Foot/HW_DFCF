@@ -23,6 +23,13 @@ class Person {
 		this.age = age;
 	}
 	
+	// 반환형: Person 클래스형
+	// 매개변수: 없음
+	// 기능: 생성된 인스턴스의 this 리턴
+	Person returnItSelf() {
+		return this;
+	}
+	
 	/*
 	 * 생성자에서 다른 생성자를 호출하는 this
 	 * 클래스에 생성자가 여러 개 있을 때 어떤 생성자에서 다른 생성자를 호출하는 경우가 있다
@@ -42,6 +49,14 @@ public class Ex02_CallAnotherConst {
 		Person noName = new Person();
 		System.out.println(noName.name); // noName 참조 변수로 name 멤버 변수 데이터 가져옴
 		System.out.println(noName.age);  // noName 참조 변수로 age 멤버 변수 데이터 가져옴
+		
+		// Person형 참조 변수 p 선언과 동시에
+		// noName 참조변수로 접근한 returnItSelf() 메서드의 리턴 값을 대입
+		// 즉, noName의 인스턴스의 정보가 p 변수에 대입된다
+		Person p = noName.returnItSelf();
+		System.out.println(p);       // 참조 변수 p의 데이터 출력  
+		System.out.println(noName);  // 참조 변수 noName 데이터 출력
+		// p와 noName 은 동일한 클래스명@메모리 주소가 출력된다
 		
 	}
 	
