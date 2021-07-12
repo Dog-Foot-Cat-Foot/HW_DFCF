@@ -2,11 +2,13 @@ package day0713.ch07;
 
 public class Book {
 	
-	// 멤버 변수
+	//==멤버 변수==================================
 	// private로 String형 참조 변수 선언
 	private String bookName;
 	private String author;
+	//==========================================
 	
+	//==========================================
 	// 디폴트 생성자
 	public Book() {}
 	
@@ -15,6 +17,7 @@ public class Book {
 		this.bookName = bookName;
 		this.author = author;
 	}
+	//==========================================
 	
 	// get(), set() 메서드 ===================
 	

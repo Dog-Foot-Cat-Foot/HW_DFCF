@@ -11,9 +11,11 @@ public class Ex07_ArrayCopy {
 		// System.arraycopy() 메서드 사용
 		// 배열 복사
 		System.arraycopy(array1, 0, array2, 1, 4);
+		//----------------------------------------------------
 		// System.arraycopy(array1, 0, array2, 1, 5);
 		// 만약 위와 같이 선언하면 java.lang.ArrayIndexOutOfBoundsException 오류 발생한다
 		// array2 배열 길이보다 복사할 요소 개수가 많기 때문이다
+		//----------------------------------------------------
 		
 		// array2 배열의 길이만큼 반복 수행
 		for(int i = 0; i <array2.length; i++) {
@@ -21,7 +23,7 @@ public class Ex07_ArrayCopy {
 			System.out.println(array2[i]); // 1, 10, 20, 30, 40
 		}
 		
-		/*
+		/* ============================================================
 		 * 배열 복사하기
 		 * System.arraycopy(src, srcPos, dest, destPos, length)
 		 * src: 복사할 배열 이름
@@ -31,6 +33,7 @@ public class Ex07_ArrayCopy {
 		 * length: src 에서 dest로 자료를 복사할 요소 개수
 		 * 
 		 * 복사할 대상 배열의 전체 길이가 복사할 요소 개수보다 작다면 오류가 난다
+		 * ============================================================
 		 */
 
 	}
