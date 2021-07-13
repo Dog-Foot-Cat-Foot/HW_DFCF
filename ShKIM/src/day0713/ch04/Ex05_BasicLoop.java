@@ -4,10 +4,11 @@ public class Ex05_BasicLoop {
 
 	public static void main(String[] args) {
 		
+		//---------------------------------------------------
 		// int형 변수 num에 데이터 1 초기화
+		//---------------------------------------------------
 		int num = 1;
 		
-		// num = num + 2
 		num += 2;
 		num += 3;
 		num += 4;
