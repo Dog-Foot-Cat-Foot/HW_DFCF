@@ -4,35 +4,40 @@ public class Ex03_StudentTest1 {
 
 	public static void main(String[] args) {
 		
-		// new 예약어로 Student 생성자를 호출하여 인스턴스를 생성 후
+		//---------------------------------------------------
+		// <1> new 예약어로 Student 생성자를 호출하여 인스턴스를 생성 후
 		// Student 객체 참조형 변수 student1 에 생성된 인스턴스의 메모리 위치 주소값 대입
-		Student student1 = new Student();
-		// student1 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
+		// <2> student1 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
 		// "김석진" String 객체의 메모리 위치 주소값을 대입
 		// student1.studentName = "김석진";
-		student1.setStudentName("김석진");
-		
-		// student1 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
+		// <3> student1 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
 		// getStudentName() 메서드 호출하여 리턴받은 데이터 출력
-		System.out.println(student1.getStudentName()); // 김석진
+		//---------------------------------------------------
+		Student student1 = new Student();	// <1>
+		student1.setStudentName("김석진");	// <2>
+		System.out.println(student1.getStudentName()); // <3> 김석진
 		
-		// new 예약어로 Student 생성자를 호출하여 인스턴스를 생성 후
+		//---------------------------------------------------
+		// <1> new 예약어로 Student 생성자를 호출하여 인스턴스를 생성 후
 		// Student 객체 참조형 변수 student2 에 생성된 인스턴스의 메모리 위치 주소값 대입
-		Student student2 = new Student();
-		// student2 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
+		// <2> student2 참조 변수에 도트(.) 연산자를 사용하여 접근한 Student 객체의 studentName 멤버 변수에
 		// "박지민" String 객체의 메모리 위치 주소값을 대입
 		// student2.studentName = "박지민";
-		student2.setStudentName("박지민");
-		
-		// student2 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
+		// <3> student2 참조 변수의 메모리 위치 주소값으로 Student 객체에 접근하여
 		// getStudentName() 메서드 호출하여 리턴받은 데이터 출력
-		System.out.println(student2.getStudentName()); // 박지민
+		//---------------------------------------------------
+		Student student2 = new Student();	// <1> 
+		student2.setStudentName("박지민");	// <2>
+		System.out.println(student2.getStudentName()); // <3> 박지민
 		
+		//---------------------------------------------------
 		// 참조 변수 데이터 출력
+		//---------------------------------------------------
 		System.out.println(student1); // 클래스 이름@주소 값
 		System.out.println(student2);
 		
-		/*
+		
+		/* ==============================================
 		 * 인스턴스 여러 개 생성하기
 		 * 인스턴스는 하나 이상 만들 수 있다
 		 * 
@@ -56,8 +61,8 @@ public class Ex03_StudentTest1 {
 		 * 메서드: 멤버 변수를 이용하여 클래스의 기능을 구현
 		 * 참조 변수: 메모리에 생성된 인스턴스를 가리키는 변수
 		 * 참조 값: 생성된 인스턴스의 메모리 주소 값
+		 * ==============================================
 		 */
-		
 		
 	}
 

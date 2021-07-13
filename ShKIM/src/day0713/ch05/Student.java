@@ -5,12 +5,22 @@ package day0713.ch05;
 // Student: 클래스 이름, 대문자로 시작함
 public class Student {
 	
-	// 멤버 변수(member variable): 클래스의 속성(property), 특성(attribute)
-	int studentID;		 // 학번
-	// String studentName;       // 학생 이름
-	private String studentName;  // private 선언 학생 이름	
-	int grade;			 // 학년
-	String address;		 // 사는 곳
+	//---------------------------------------------------
+	// 멤버 변수(member variable)
+	// 클래스의 속성(property), 특성(attribute)
+	// <1> 학번
+	// <2> 학생 이름
+	// <3> private 선언 학생 이름
+	// <4> 학년
+	// <5> 사는 곳 
+	// <6> Subject형 참조변수 선언(국어 성적 관리)
+	// <7> Subject형 참조변수 선언(수학 성적 관리)
+	//---------------------------------------------------
+	int studentID;		 		// <1>
+	// String studentName;      // <2>
+	private String studentName; // <3>
+	int grade;			 		// <4>
+	String address;		 		// <5>
 	
 	/* Subject 클래스로 분리 
 	int koreaScore;		 // 국어 성적
@@ -19,40 +29,44 @@ public class Student {
 	String mathSubject;  // 수학 과목
 	*/
 	
-	Subject korean;		 // Subject형 참조변수 선언(국어 성적 관리)
-	Subject math; 		 // Subject형 참조변수 선언(수학 성적 관리)
+	Subject korean;		 // <6>
+	Subject math; 		 // <7>
 	
-	// ====멤버 변수 끗=메서드 시작==============================================
-	
+	//---------------------------------------------------
 	// 멤버 함수(member function): 멤버 변수를 사용하여 클래스 기능을 구현한 것, 메서드(method)
 	// 함수 반환형: void
 	// 함수명: showStudentInfo
 	// 매개변수: 없음
 	// 기능: 학생의 이름과 주소를 출력
+	//---------------------------------------------------
 	public void showStudentInfo() {
 		System.out.println(studentName + ", " + address); // 이름, 주소 출력
 	}
 	
+	//---------------------------------------------------
 	// 메서드(method) : 클래스 내부에서 사용하는 멤버 함수를 말하며 함수에 객체 지향 개념이 포함된 용어이다
 	// 함수 반환형: String
 	// 함수명: getStudentName
 	// 매개변수: 없음
 	// 기능: studentName을 반환
 	// private 변수인 studentName에 접근해 값을 가져오는 public get() 메서드
+	//---------------------------------------------------
 	public String getStudentName() {
 		return studentName;
 	}
 	
+	//---------------------------------------------------
 	// 함수 반환형: void (없음)
 	// 함수명: setStudentName
 	// 매개변수: String name
 	// 기능: 매개변수로 받은 String형 데이터를 studentName 멤버 변수에 대입함
 	// private 변수인 studentName에 접근해 값을 지정하는 public set() 메서드
+	//---------------------------------------------------
 	public void setStudentName(String name) {
 		studentName = name;
 	}
 	
-	/*
+	/* ====================================================
 	 * 메서드 이름 명명: 해당 클래스를 사용하느 코드의 입장에서 짓는 것이 좋다
 	 * 클래스 이름: 대문자로 시작
 	 * public 클래스: 자바 파일에서 하나만 있어야 함, public 클래스 이름과 자바 파일 이름은 같아야 함
@@ -74,6 +88,7 @@ public class Student {
 	 * protected: 같은 패키지 내부와 상속 관계의 클래스에서만 접근할 수 있고 그 외 클래스에서는 접근할 수 없다
 	 * 아무것도 없음: default, 같은 패키지 내부에서만 접근할 수 있다
 	 * private: 같은 클래스 내부에서만 접근할 수 있다
+	 * ====================================================
 	 */
 	
 }
