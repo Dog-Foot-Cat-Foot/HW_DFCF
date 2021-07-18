@@ -16,28 +16,44 @@ public class Customer {
 	int bonusPoint;					// <4>
 	double bonusRatio;				// <5>
 	
-/*	
 	//-------------------------------------
 	// 디폴트 생성자
 	// <1> 기본 등급을 SILVER로 초기화 
 	// <2> 적립 비율을 0.01로 초기화
 	// <3> 상위 클래스 생성할 때 콘솔 출력문 
+	// <4> 고객 등급과 보너스 포인트 적립률 지정 함수 호출
 	//-------------------------------------
 	public Customer() {
-		customerGrade = "SILVER";		// <1>
-		bonusRatio = 0.01;				// <2>
-		System.out.println("Customer() 생성자 호출");	// <3>
+		//-------------------------------------
+		// customerGrade = "SILVER";		// <1>
+		// bonusRatio = 0.01;				// <2>
+		// System.out.println("Customer() 생성자 호출");	// <3>
+		//-------------------------------------
+		initCustomer();					// <4>
 	}
-*/	
+	
 	//-------------------------------------
-	// 고객 아이디, 고객 이름을 초기화하는 생성자 선언
+	// <1> 고객 아이디, 고객 이름을 초기화하는 생성자 선언
+	// <2> 고객 등급과 보너스 포인트 적립률 지정 함수 호출
 	//-------------------------------------	
-	public Customer(int customerID, String customerName) {
+	public Customer(int customerID, String customerName) {	// <1>
 		this.customerID = customerID;
 		this.customerName = customerName;
+		//-------------------------------------
+		// customerGrade = "SILVER";
+		// bonusRatio = 0.01;
+		// System.out.println("Customer(int, String) 생성자 호출");
+		//-------------------------------------
+		initCustomer();					// <2>
+	}
+	
+	//-------------------------------------
+	// 생성자에서만 호출할 메서드 선언
+	// 멤버변수를 초기화한다.
+	//-------------------------------------
+	private void initCustomer() {
 		customerGrade = "SILVER";
 		bonusRatio = 0.01;
-		System.out.println("Customer(int, String) 생성자 호출");
 	}
 	
 	//-------------------------------------

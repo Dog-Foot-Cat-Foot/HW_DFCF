@@ -48,7 +48,7 @@ public class VIPCustomer extends Customer {
 		bonusRatio = 0.05;					// <3>
 		saleRatio = 0.1;					// <4>
 		this.agentID = agentID;				// <5>
-		System.out.println("VIPCustomer(int, String, int) 생성자 호출");	// <6>
+		// System.out.println("VIPCustomer(int, String, int) 생성자 호출");	// <6>
 	}
 	
 	//-------------------------------------
@@ -70,6 +70,16 @@ public class VIPCustomer extends Customer {
 		//-------------------------------------
 		bonusPoint += price * bonusRatio;			// <1>
 		return price - (int)(price * saleRatio);	// <2>
+	}
+	
+	//-------------------------------------
+	// 고객 정보 출력 메서드 오버라이딩
+	// 상위 클래스의 showCustomerInfo() 메서드의 리턴값에 더하여
+	// 담당 상단원 번호를 추가로 리턴한다.
+	//-------------------------------------
+	@Override
+	public String showCustomerInfo() {
+		return super.showCustomerInfo() + "담당 상담원 번호는 " + agentID + "입니다.";
 	}
 
 	
