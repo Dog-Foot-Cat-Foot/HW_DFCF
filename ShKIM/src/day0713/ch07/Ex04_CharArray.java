@@ -11,6 +11,8 @@ public class Ex04_CharArray {
 		char[] alphabets = new char[26];	// <1>
 		char ch = 'A';						// <2>
 		
+		System.out.println(alphabets[0] == 0);
+		
 		//---------------------------------------------------
 		// alphabets 배열 길이만큼 반복
 		// 초기화식: i = 0
