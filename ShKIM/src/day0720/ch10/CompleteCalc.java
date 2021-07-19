@@ -33,4 +33,13 @@ public class CompleteCalc extends Calculator {
 		System.out.println("Calc 인터페이스를 구현하였다.");
 	}
 	
+	// ------------------------------------------
+	// 디폴트 메서드 재정의하기
+	// 하위 클래스에서 디폴트 메서드를 재정의할 수 있다.
+	// ------------------------------------------
+	@Override
+	public void description() {
+		super.description();
+	}
+	
 }
