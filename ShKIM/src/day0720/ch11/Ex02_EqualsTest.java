@@ -27,6 +27,35 @@ class Student {
 		return studentId + "," + studentName;
 	}
 	
+	//------------------------------------------
+	// equals() 메서드 오버라이딩
+	//------------------------------------------
+	@Override
+	public boolean equals(Object obj) {
+		
+		// instanceof를 사용하여 매개변수의 원래 자료형이 Student인지 확인
+		if(obj instanceof Student) {
+			Student std = (Student)obj;
+			// 재정의한 equals() 메서드는 학생의 학번이 같으면 true 반환
+			if(this.studentId == std.studentId) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		
+		return false;
+	}
+	
+	//------------------------------------------
+	// hashCode() 메서드 오버라이딩
+	// 해시 코드 값으로 학번 반환
+	//------------------------------------------
+	@Override
+	public int hashCode() {
+		return studentId;
+	}
+	
 }
 
 public class Ex02_EqualsTest {
@@ -72,6 +101,19 @@ public class Ex02_EqualsTest {
 			System.out.println("studentKim과 studentJin의 동일하지 않습니다.");
 		}
 		
+		//------------------------------------------
+		// <1> studentKim의 오버라이딩된 hashCode() 메서드 호출, 100
+		// <2> studentJin의 오버라이딩된 hashCode() 메서드 호출, 100
+		// <3> studentKim의 실제 인스턴스의 주소값 출력, 2054574951
+		// <4> studentJin의 실제 인스턴스의 주소값 출력, 1991294891
+		//------------------------------------------
+		System.out.println("studentKim의 hashCode : " + studentKim.hashCode());
+		System.out.println("studentJin의 hashCode : " + studentJin.hashCode());
+		
+		System.out.println("studentKim의 실제 주소값 : " + System.identityHashCode(studentKim));
+		System.out.println("studentJin의 실제 주소값 : " + System.identityHashCode(studentJin));
+		
+		
 		/* ========================================
 		 * equals() 메서드
 		 * 두 인스턴스의 주소 값을 비교하여 boolean 값(true/false)을 반환해 주는 것이다.
@@ -80,6 +122,9 @@ public class Ex02_EqualsTest {
 		 * 
 		 * ==
 		 * 단순히 물리적으로 같은 메모리 주소인지 여부를 확인할 수 있다.
+		 * 
+		 * hashCode() 메서드
+		 * equals() 메서드에서 논리적으로 같다는 것을 구현할 때 사용한 멤버 변수를 활용하는 것이 좋다.
 		 * ========================================
 		 */
 		
