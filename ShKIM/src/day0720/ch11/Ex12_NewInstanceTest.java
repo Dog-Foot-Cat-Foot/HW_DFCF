@@ -11,8 +11,8 @@ public class Ex12_NewInstanceTest {
 		// <1> Person형 person1 변수 선언, Person() 생성자를 호출하여 인스턴스 생성, 생성된 메위주 대입
 		// <2> person1의 정보 출력, day0720.ch11.Person@7a765367
 		//------------------------------------------
-		Person person1 = new Person();
-		System.out.println(person1);
+		Person person1 = new Person();				// <1>
+		System.out.println(person1);				// <2>
 		
 		//------------------------------------------
 		// <1> Class형 pClass 변수 선언, Class의 forName() 메서드 호출하여 
@@ -22,9 +22,9 @@ public class Ex12_NewInstanceTest {
 		//	Object형으로 메위주 리턴, 생성된 인스턴스를 Person형으로 다운캐스팅하여 대입
 		// <3> person2의 정보 출력, day0720.ch11.Person@76b0bfab
 		//------------------------------------------
-		Class pClass = Class.forName("day0720.ch11.Person");
-		Person person2 = (Person)pClass.newInstance();
-		System.out.println(person2);
+		Class pClass = Class.forName("day0720.ch11.Person");	// <1>
+		Person person2 = (Person)pClass.newInstance();			// <2>
+		System.out.println(person2);							// <3>
 		
 		
 		/* ==========================================
