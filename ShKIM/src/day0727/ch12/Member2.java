@@ -1,9 +1,11 @@
 package day0727.ch12;
 
+import java.util.Comparator;
+
 //------------------------------------------
-// Comparable<Member> 인터페이스를 구현한 Member 클래스 선언
+// Comparator<Member2> 인터페이스를 구현한 Member 클래스 선언
 //------------------------------------------
-public class Member implements Comparable<Member> {
+public class Member2 implements Comparator<Member2> {
 	
 	//------------------------------------------
 	// <1> int형 memberId 멤버 변수 선언, 회원 아이디
@@ -15,7 +17,7 @@ public class Member implements Comparable<Member> {
 	//------------------------------------------
 	// 회원 아이디, 회원 이름을 입력받는 생성자 선언
 	//------------------------------------------
-	public Member(int memberId, String memberName) {
+	public Member2(int memberId, String memberName) {
 		this.memberId = memberId;
 		this.memberName = memberName;
 	}
@@ -68,8 +70,8 @@ public class Member implements Comparable<Member> {
 	//------------------------------------------
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof Member) {					// <1>
-			Member member = (Member)obj;			// <2>
+		if(obj instanceof Member2) {					// <1>
+			Member2 member = (Member2)obj;			// <2>
 			
 			if(this.memberId == member.memberId) {	// <3>
 				return true;						// <4>
@@ -81,19 +83,16 @@ public class Member implements Comparable<Member> {
 	}
 	
 	//------------------------------------------
-	// compareTo() 메서드 오버라이딩
-	// 추가한 회원 아이디와 매개변수로 받은 회원 아이디를 비교함
-	// 새로 추가한 회원 아이디가 더 크면 양수, 그렇지 않으면 음수, 같으면 0을 반환
-	// 출력 결과 값은 오름차순으로 정렬된다.
+	// compare(Member2 mem1, Member2 mem2) 메서드 오버라이딩
+	// 전달받은 두 매개변수를 비교한다.
 	//------------------------------------------
-	// 객체가 TreeSet에 요소를 추가할 때 호출되는 메서드이다.
-	// 콜백(callback) 메서드 : 프로그래머가 작성하지만 시스템이나 자바 컬렉션 프레임워크가 호출하는 메서드를 말한다.
+	// compare() 메서드는 전달되는 두 매개변수를 비교한다.
+	// 첫 번째 매개변수가 더 클 때 양수를 반환하여 오름차순으로 정렬된다.
 	//------------------------------------------
 	@Override
-	public int compareTo(Member member) {
-		return (this.memberId - member.memberId);
+	public int compare(Member2 mem1, Member2 mem2) {
+		return mem1.getMemberId() - mem2.getMemberId();
 	}
-	
 	
 	/* =========================================
 	 * 컬렉션 프레임워크(collection framework)
