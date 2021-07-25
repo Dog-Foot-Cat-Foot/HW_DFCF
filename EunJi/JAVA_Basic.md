@@ -1125,3 +1125,531 @@ for(int i = 0; i <= 4; i++)
 			System.out.println();
 		}
 ```
+
+## 39. Student 클래스 만들기
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;			//학번
+		String studentName;		//힉생 이름
+		int grade;				//학년
+		String address;			//사는곳
+}
+```
+
+## 40. Person 클래스 만들기
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	int height; // 키
+	double weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+}
+```
+
+## 41. 학생 이름과 주소 출력하는 메소드 만들기
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;			//학번
+		String studentName;		//힉생 이름
+		int grade;				//학년
+		String address;			//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}
+}
+```
+
+## 42. 함수 구현하고 호출하기
+```java
+package kr.java.chapter05;
+
+public class FunctionTest {
+	public static void main(String[] args) {
+		// 함수 구현하고 호출하기
+		int num1 = 10;
+		int num2 = 20;
+		
+		int sum = add(num1, num2); // add() 함수 호출
+		System.out.println(num1 + "+" + num2 + "=" + sum + "입니다");
+		}
+	
+	public static int add(int n1, int n2) { //add() 함수
+		int result = n1 + n2;
+		return result; // 결과 값 반환
+	}
+}
+```
+
+## 43. 학생 이름을 반환하는 메소드
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;			//학번
+		String studentName;		//힉생 이름
+		int grade;				//학년
+		String address;			//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		/*public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}*/
+		//학생의 이름을 반환하는 메소드
+		public String getStudentName() {
+			return studentName;
+		}
+}
+```
+
+## 44. 학생 이름을 부여하는 메소드
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;			//학번
+		String studentName;		//힉생 이름
+		int grade;				//학년
+		String address;			//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		/*public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}*/
+		//학생의 이름을 반환하는 메소드
+		public String getStudentName() {
+			return studentName;
+		}
+		//학생 이름을 부여하는 메소드
+		public void setStudentName(String name) {	//학생 이름을 매개변수로 전달
+			studentName = name;
+		}
+}
+```
+
+## 45. Student 클래스에 main() 함수 추가하기
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;			//학번
+		String studentName;		//힉생 이름
+		int grade;				//학년
+		String address;			//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		/*public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}*/
+		//학생의 이름을 반환하는 메소드
+		public String getStudentName() {
+			return studentName;
+		}
+		//학생 이름을 부여하는 메소드
+		public void setStudentName(String name) {	//학생 이름을 매개변수로 전달
+			studentName = name;
+		}
+		//Student 클래스에 main() 함수 추가하기
+		public static void main(String[] args) {
+			Student studentAhn = new Student(); //Student 클래스 생성
+			studentAhn.studentName = "안연수";
+			
+			System.out.println(studentAhn.studentName);
+			System.out.println(studentAhn.getStudentName());
+		}
+}
+```
+
+## 46. StudentTest 실행 클래스 만들기
+```java
+package kr.java.chapter05;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		// StudentTest 실행 클래스 만들기
+		Student studentAhn = new Student(); //Student 클래스 생성
+		studentAhn.studentName = "안승연";
+		
+		System.out.println(studentAhn.studentName);
+		System.out.println(studentAhn.getStudentName());
+	}
+
+}
+```
+
+## 47. 인스턴스 여러 개 생성하기
+```java
+package kr.java.chapter05;
+
+public class StudentTest1 {
+
+	public static void main(String[] args) {
+		// 인스턴스 여러개 생성하기
+		Student student1 = new Student();	//첫 번째 학생 생성
+		student1.studentName = "안연수";
+		System.out.println(student1.getStudentName());
+		
+		Student student2 = new Student();	// 두 번째 학생 생성
+		student2.studentName = "안승연";
+		System.out.println(student2.getStudentName());
+	}
+
+}
+```
+
+## 48. 참조 값 출력하기
+```java
+package kr.java.chapter05;
+
+public class StudentTest2 {
+
+	public static void main(String[] args) {
+		// 참조 값 출력하기
+		Student student1 = new Student();	//첫 번째 학생 생성
+		student1.studentName = "안연수";
+		
+		Student student2 = new Student();	// 두 번째 학생 생성
+		student2.studentName = "안승연";
+		
+		//참조 변수 값 출력
+		System.out.println(student1);
+		System.out.println(student2);
+	}
+
+}
+```
+
+## 49. 생성자 만들기
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	float height; // 키
+	float weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+}
+```
+
+## 50. 생성자 테스트하기
+```java
+package kr.java.chapter05;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		// 생성자 테스트하기
+		Person personLee = new Person();
+	}
+
+}
+```
+
+## 51. 디폴트 생성자
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	float height; // 키
+	float weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+	
+	//디폴트 생성자
+	//자바 컴파일러가 자동으로 제공하는 디폴트 생성자
+	public Person() { }
+}
+```
+
+## 52. 생성자 만들기
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	float height; // 키
+	float weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+	
+	//디폴트 생성자
+	//자바 컴파일러가 자동으로 제공하는 디폴트 생성자
+	//생성자 만들기
+	//사람 이들을 매개변수로 입력받아서 Person 클래스를 생성하는 생성자
+	public Person(String pname) {
+		name = pname;
+	}
+}
+```
+
+## 53. 생성자 테스트하기
+```java
+package kr.java.chapter05;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		// 생성자 테스트하기
+		Person personLee = new Person(); //오류발생
+	}
+
+}
+```
+
+## 54. 디폴트 생정사 직접 추가하기
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	float height; // 키
+	float weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+	
+	//디폴트 생성자 직접 추가
+	//자바 컴파일러가 자동으로 제공하는 디폴트 생성자
+	public Person() {}
+	//생성자 만들기
+	//사람 이들을 매개변수로 입력받아서 Person 클래스를 생성하는 생성자
+	public Person(String pname) {
+		name = pname;
+	}
+}
+```
+
+## 55. 생성자 사용하기
+```java
+package kr.java.chapter05;
+
+public class Person {
+	//Person 클래스 만들기
+	String name; // 이름
+	float height; // 키
+	float weight; // 몸무게
+	char gender; // 성별
+	boolean married; // 결혼 여부
+	
+	//디폴트 생성자 직접 추가
+	//자바 컴파일러가 자동으로 제공하는 디폴트 생성자
+	public Person() {}
+	//생성자 만들기
+	//사람 이들을 매개변수로 입력받아서 Person 클래스를 생성하는 생성자
+	//이름을 매개변수로 입력받은 생성자
+	public Person(String pname) {
+		name = pname;
+	}
+	//이름, 키, 몸무게를 매개변수로 입력받는 생성자
+	public Person(String pname, float pheight, float pweight) {
+		name = pname;
+		height = pheight;
+		weight = pweight;
+	}
+}
+```
+
+## 56. 테스트 클래스 구현하기
+```java
+package kr.java.chapter05;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		// 생성자 테스트하기
+		// 테스트 클래스 구현하기
+		//Person personLee = new Person();
+		// 디폴트 생성자로 클래스를 생성한 후 인스턴스 변수 값을 따로 초기화
+		Person personKim = new Person();
+		personKim.name = "김유신";
+		personKim.weight = 85.5F;
+		personKim.height = 180.0F;
+		
+		//인스턴스 변수 초기화와 동시에 클래스 생성
+		Person personLee = new Person("이순신",175,75);
+	}
+
+}
+```
+
+## 57. 학생 클래스 만들기(1)
+```java
+package kr.java.chapter05;
+
+public class Student1 {
+	//Student class1 선언(멤버변수)
+	int studentId;			//학번
+	String studentName;		//학생 이름
+	int koreaScore;			// 국어점수
+	int mathScore;			// 수학점수
+}
+```
+
+## 58. 학생 클래스 만들기(2)
+```java
+package kr.java.chapter05;
+
+public class Student2 {
+	//Student class1 선언(멤버변수)
+	int studentId;			//학번
+	String studentName;		//학생 이름
+	int koreaScore;			// 국어점수
+	int mathScore;			// 수학점수
+	//과목이름 변수 추가
+	String koreaSubject; 	// 국어
+	String mathSubject;		//	수학
+}
+```
+
+## 59. 과목 클래스 만들기
+```java
+package kr.java.chapter05;
+
+public class Subject {
+	//과목 클래스 만들기
+	String subjectName;	//과목이름
+	int scorePoint;
+}
+```
+
+## 60. 학생 클래스 만들기(3)
+```java
+package kr.java.chapter05;
+
+public class Student3 {
+	//학생 클래스 만들기3
+	int studentID;		//학번
+	String studentName;	//학생이름
+	Subject korean;		// 국어
+	Subject math;		// 수학
+}
+```
+
+## 61. private 사용하기
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;				//학번
+		//studentName 변수를 private으로 선언
+		private String studentName;	//학생 이름
+		int grade;					//학년
+		String address;				//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		/*public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}*/
+		//학생의 이름을 반환하는 메소드
+		public String getStudentName() {
+			return studentName;
+		}
+		//학생 이름을 부여하는 메소드
+		public void setStudentName(String name) {	//학생 이름을 매개변수로 전달
+			studentName = name;
+		}
+		//Student 클래스에 main() 함수 추가하기
+		public static void main(String[] args) {
+			Student studentAhn = new Student(); //Student 클래스 생성
+			studentAhn.studentName = "안연수";
+			
+			System.out.println(studentAhn.studentName);
+			System.out.println(studentAhn.getStudentName());
+		}
+}
+```
+
+## 62. private 변수 테스트하기
+```java
+package kr.java.chapter05;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		// StudentTest 실행 클래스 만들기
+		Student studentLee = new Student(); //Student 클래스 생성
+		studentLee.studentName = "이상원";	//오류발생
+		
+		System.out.println(studentLee.studentName);
+		System.out.println(studentLee.getStudentName());
+	}
+
+}
+```
+
+## 63. get(), set() 메소드 사용하기
+```java
+package kr.java.chapter05;
+
+public class Student {
+		//Student class 선언(멤버변수)
+		int studentId;				//학번
+		//studentName 변수를 private으로 선언
+		private String studentName;	//학생 이름
+		int grade;					//학년
+		String address;				//사는곳
+		
+		//학생 이름과 주소 출력하는 메소드 만들기
+		/*public void showStudentInfo() { // 메서드 추가
+			System.out.println(studentName + "," + address); // 이름, 주소 출력
+		}*/
+		//get(), set() 메소드 사용하기
+		//학생의 이름을 반환하는 메소드
+		//private변수인 studentName에 접근해 값을 가져오는 public get() 메소드
+		public String getStudentName() {
+			return studentName;
+		}
+		//학생 이름을 부여하는 메소드
+		//private변수인 studentName에 접근해 값을 지정하는 public set() 메소드
+		public void setStudentName(String name) {	//학생 이름을 매개변수로 전달
+			studentName = name;
+		}
+		//Student 클래스에 main() 함수 추가하기
+		public static void main(String[] args) {
+			Student studentAhn = new Student(); //Student 클래스 생성
+			studentAhn.studentName = "안연수";
+			
+			System.out.println(studentAhn.studentName);
+			System.out.println(studentAhn.getStudentName());
+		}
+}
+```
+
+## 64. private 변수에 접근하기
+```java
+package kr.java.chapter05;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		// StudentTest 실행 클래스 만들기
+		Student studentLee = new Student(); //Student 클래스 생성
+		//studentLee.studentName = "이상원";	//오류발생
+		studentLee.setStudentName("이상원");
+		
+		System.out.println(studentLee.getStudentName());
+	}
+
+}
+```
