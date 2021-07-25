@@ -1653,3 +1653,523 @@ public class StudentTest {
 
 }
 ```
+
+## 65. this 출력하기
+```java
+package kr.java.chapter06;
+
+class BirthDay {
+	int day;
+	int month;
+	int year;
+	
+	public void setYear(int year) { //태어난 연도를 지정하는 메서드
+		this.year = year; //bDay.year = year;와 같음
+	}
+	
+	public void printThis() { //this 출력 메서드
+		System.out.println(this); //System.out.println(bDay);와 같음
+	}
+}
+
+public class ThisExmaple {
+
+	public static void main(String[] args) {
+		// this 출력하기
+		BirthDay bDay = new BirthDay();
+		bDay.setYear(2000); //태어난 연도를 2000으로 지정
+		System.out.println(bDay); //참조 변수 출력
+		bDay.printThis(); //this 출력 메서드 호출
+	}
+}
+```
+
+## 66. this로 다른 생성자 호출하기
+```java
+package kr.java.chapter06;
+
+class Person {
+	String name;
+	int age;
+	
+	Person(){
+		this("이름 없음", 1);//this를 사용해 Person(String,int) 생성자 호출
+	}
+	
+	Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+}
+
+public class CallAnotherConst {
+
+	public static void main(String[] args) {
+		// this 로 다른 생성자 호출하기
+		Person noName = new Person();
+		System.out.println(noName.name);
+		System.out.println(noName.age);
+	}
+
+}
+```
+
+## 67. this를 사용하여 주소 값 반환하기
+```java
+package kr.java.chapter06;
+
+class Person {
+	String name;
+	int age;
+	
+	Person(){
+		this("이름 없음", 1);	//this를 사용해 Person(String,int) 생성자 호출
+	}
+	
+	Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	//반환형은 클래스형
+	Person returnItSelf() {
+		return this; //this 반환
+	}
+}
+
+public class CallAnotherConst {
+
+	public static void main(String[] args) {
+		// this 로 다른 생성자 호출하기
+		//this를 사용하여 주소 값 반환하기
+		Person noName = new Person();
+		System.out.println(noName.name);
+		System.out.println(noName.age);
+		
+		Person p = noName.returnItSelf(); //this 값을 클래스 변수에 대입
+		System.out.println(p);            //noName.returnItSelf()의 반환 값 출력
+		System.out.println(noName);       //참조 변수 출력
+	}
+
+}
+```
+
+## 68. 학생 클래스 구현하기
+```java
+package kr.java.chapter06;
+
+public class Student {
+	//학생 클래스 구현하기
+	public String studentName; 	//학생 이름
+	public int grade;			//학년
+	public int money; 			//학생이 가지고 있는 돈
+	
+	//학생 이름과 가진 돈을 매개변수로 받는 생성자
+	public Student(String studentName, int money) {
+		this.studentName = studentName; 
+		this.money = money;
+	}
+	
+	//학생이 버스를 타면 1000원을 지불하는 기능을 구현한 메서드
+	public void takeBus(Bus bus) {
+		bus.take(1000); 	
+		this.money -= 1000;
+	}
+	
+	//학생이 지하철을 타면 1500원을 지불하는 기능을 구현한 메서드
+	public void takeSubway(Subway subway) {
+		subway.take(1500); 	
+		this.money -= 1500;
+	}
+	
+	//학생의 현재 정보를 출력하는 메서드
+	public void showInfo() { 	
+		System.out.println(studentName + "님의 남은 돈은" + money + "입니다.");
+	}
+}
+```
+
+## 69. 버스 클래스 구현하기
+```java
+package kr.java.chapter06;
+
+public class Bus {
+	//버스 클래스 구현하기
+	int busNumber; 		//버스 번호
+	int passengerCount; //승객 수
+	int money;			//버스 수입
+	
+	//버스 번호를 매개변수로 받는 생성자
+	public Bus(int busNumber) { 
+		this.busNumber = busNumber;
+	}
+	
+	//승객이 버스에 탄 경우를 구현한 메서드
+	public void take(int money) { 
+		this.money += money; //버스 수입 증가
+		passengerCount++; 	//승객 수 증가
+	}
+	
+	//버스 정보를 출력하는 메서드
+	public void showInfo() { 
+		System.out.println("버스" + busNumber + "번의 승객은" 
+					+ passengerCount + "명이고,수입은"+ money + "입니다.");
+	}
+}
+```
+
+## 70. 지하철 클래스 구현하기
+```java
+package kr.java.chapter06;
+
+public class Subway {
+	//지하철 클래스 구현하기
+	String lineNumber; //지하철 노선
+	int passengerCount; //승객 수
+	int money; //지하철 수입
+	
+	//지하철 노선 번호를 매개변수로 받는 생성자
+	public Subway(String lineNumber) { 
+		this.lineNumber = lineNumber;
+	}
+	
+	//승객이 지하철에 탄 경우를 구현한 메서드
+	public void take(int money) { 
+		this.money += money; //수입 증가
+		passengerCount++; //승객 수 증가
+	}
+	
+	//지하철 정보 출력하는 메서드
+	public void showInfo() {
+		System.out.println(lineNumber + "의 승객은" + passengerCount + "명이고, 수입은"
+				+ money + "입니다.");
+	}
+}
+```
+
+## 71. 버스와 지하철 타기
+```java
+package kr.java.chapter06;
+
+public class TakeTrans {
+
+	public static void main(String[] args) {
+		// 버스와 지하철 타기
+		
+		//학생 두명 생성
+		Student studentJames = new Student("James", 5000);
+		Student studentTomas = new Student("Tomas", 10000);
+		
+		//노선 번호가 100번인 버스 생성
+		Bus bus100 = new Bus(100);
+		//james가 100번 버스 탐
+		studentJames.takeBus(bus100);
+		//james 정보 출력
+		studentJames.showInfo();
+		//버스 정보 출력
+		bus100.showInfo();
+		
+		//노선 번호가 2호선인 지하철 생성
+		Subway subwayGreen = new Subway("2호선");
+		//Tomas가 2호선 탐
+		studentTomas.takeSubway(subwayGreen);
+		//Tomas 정보 출력
+		studentTomas.showInfo();
+		//지하철 정보 출력
+		subwayGreen.showInfo();
+	}
+
+}
+```
+
+## 72. static 변수 사용하기
+```java
+package kr.java.chapter06;
+
+public class Student {
+	//학생 클래스 구현하기
+	//static 변수 사용하기
+	//static 변수는 인스턴스 생성과 상관없이 먼저 생성됨
+	public static int seriaNum = 1000;
+	public int studentID;		//학번
+	public String studentName; 	//학생 이름
+	public int grade;			//학년
+	public String address;				//사는곳
+	public int money; 			//학생이 가지고 있는 돈
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	public void setStudentName(String name) {	//학생 이름을 매개변수로 전달
+		studentName = name;
+	}
+	
+	//학생 이름과 가진 돈을 매개변수로 받는 생성자
+	public Student(String studentName, int money) {
+		this.studentName = studentName; 
+		this.money = money;
+	}
+	
+	//학생이 버스를 타면 1000원을 지불하는 기능을 구현한 메서드
+	public void takeBus(Bus bus) {
+		bus.take(1000); 	
+		this.money -= 1000;
+	}
+	
+	//학생이 지하철을 타면 1500원을 지불하는 기능을 구현한 메서드
+	public void takeSubway(Subway subway) {
+		subway.take(1500); 	
+		this.money -= 1500;
+	}
+	
+	//학생의 현재 정보를 출력하는 메서드
+	public void showInfo() { 	
+		System.out.println(studentName + "님의 남은 돈은" + money + "입니다.");
+	}
+}
+```
+
+## 73. static 변수 테스트 하기
+```java
+package kr.java.chapter06;
+
+public class StudentTest1 {
+	public static void main(String[] args) {
+		// static 변수 테스트 하기
+		Student studentLee = new Student();
+		studentLee.setStudentName("이지원");
+		//seriaNum 변수의 초기 값 출력
+		System.out.println(studentLee.seriaNum);
+		//static 변수 값 증가
+		studentLee.seriaNum++;
+		
+		Student studentSon = new Student(null, 0);
+		studentSon.setStudentName("손수경");
+		//증가된 값 출력
+		System.out.println(studentSon.seriaNum);
+		System.out.println(studentLee.seriaNum);
+	}
+
+}
+```
+
+## 74. 학번 자동으로 부여하기
+```java
+package kr.java.chapter06;
+
+public class Student1 {
+	//학번 자동으로 부여하기
+	public static int serialNum = 1000;
+	public int studentID;		//학번
+	public String studentName; 	//학생 이름
+	public int grade;			//학년
+	public String address;		//사는곳
+	
+	//생성자
+	public Student1() {
+		serialNum++;			//학생이 생성 될때마다 증가
+		studentID = serialNum;	//증가된 값을 학번 인스턴스 변수에 부여
+	}
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	public void setStudentName(String name) {
+		studentName = name;
+	}
+
+}
+```
+
+## 75. 학번 확인하기
+```java
+package kr.java.chapter06;
+
+public class StudentTest2 {
+
+	public static void main(String[] args) {
+		//학번 확인하기
+		Student1 studentLee = new Student1();
+		studentLee.setStudentName("이지원");
+		System.out.println(studentLee.serialNum);
+		System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+		
+		Student1 studentSon = new Student1();
+		studentSon.setStudentName("손수경");
+		System.out.println(studentSon.serialNum);
+		System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+	}
+
+}
+```
+
+## 76. 클래스 이름으로 static 변수 참조하기
+```java
+package kr.java.chapter06;
+
+public class StudentTest3 {
+
+	public static void main(String[] args) {
+		// 클래스 이름으로 static 변수 참조하기
+		Student1 studentLee = new Student1();
+		studentLee.setStudentName("이지원");
+		//serialNum 변수를 직접 클래스 이름으로 참조
+		System.out.println(Student1.serialNum);
+		System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+		
+		Student1 studentSon = new Student1();
+		studentSon.setStudentName("손수경");
+		//serialNum 변수를 직접 클래스 이름으로 참조
+		System.out.println(Student1.serialNum);
+		System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+	}
+
+}
+```
+
+## 77. serialNum의 get(), set() 메소드 사용하기
+```java
+package kr.java.chapter06;
+
+public class Student2 {
+	//serialNum의 get(), set() 메소드 사용하기
+	//private 변수로 변경
+	private static int serialNum = 1000;
+	int studentID;		//학번
+	String studentName; 	//학생 이름
+	int grade;			//학년
+	String address;		//사는곳
+	
+	//생성자
+	public Student2() {
+		serialNum++;			//학생이 생성 될때마다 증가
+		studentID = serialNum;	//증가된 값을 학번 인스턴스 변수에 부여
+	}
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	public void setStudentName(String name) {
+		studentName = name;
+	}
+//serialNum의 get()메소드
+	public static int getserialNum() {
+		int i = 10;
+		return serialNum;
+	}
+	
+	//serialNum의 set()메소드
+	public static void setserialNum(int serialNum) {
+		Student2.serialNum = serialNum;
+	}
+}
+```
+
+## 78. 학번 출력하기
+```java
+package kr.java.chapter06;
+
+public class StudentTest4 {
+
+	public static void main(String[] args) {
+		// 학번 출력하기
+		Student2 studentLee = new Student2();
+		studentLee.setStudentName("이지원");
+		//serialNum 값을 가져오기 위해 get() 메소드를 클래스 이름으로 직접 호출
+		System.out.println(Student2.getSerialNum());
+		System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+				
+		Student2 studentSon = new Student2();
+		studentSon.setStudentName("손수경");
+		//serialNum 값을 가져오기 위해 get() 메소드를 클래스 이름으로 직접 호출
+		System.out.println(Student2.getSerialNum());
+		System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+	}
+
+}
+```
+
+## 79. studentName 변수 살펴보기
+```java
+package kr.java.chapter06;
+
+public class StudentTest5 {
+
+	public static void main(String[] args) {
+		// studentName 변수 살펴보기
+		//인스턴스 생성 없이 호출 가능
+		System.out.println(Student2.getSerialNum());
+	}
+
+}
+```
+
+## 80. private 생성자 만들기
+```java
+package kr.java.chapter06;
+
+public class Company {
+	//private 생성자 만들기
+	private Company() {
+	}
+}
+```
+
+## 81. 인스턴스 생성하기
+```java
+package kr.java.chapter06;
+
+public class Company {
+	//인스턴스 생성하기
+	//유일하게 생성한 인스턴스
+	private static Company instance = new Company();
+	//private 생성자 만들기
+	private Company() {
+	}
+}
+```
+
+## 82. public 메소드 만들기
+```java
+package kr.java.chapter06;
+
+public class Company {
+	//인스턴스 생성하기
+	//유일하게 생성한 인스턴스
+	private static Company instance = new Company();
+	//private 생성자 만들기
+	private Company() {
+	}
+	
+	//public 메소드 만들기
+	//인스턴스를 외부에서 참조할 수 있도록 public get() 메소드 구현
+	public static Company getInstance() {
+		if(instance == null) {
+			instance = new Company();
+		}
+		//유일하게 생성한 인스턴스 반환
+		return instance;
+	}
+}
+```
+
+## 83. 변수의 주소 값 비교하기
+```java
+package kr.java.chapter06;
+
+public class CompanyTest {
+
+	public static void main(String[] args) {
+		//변수의 주소 값 비교하기
+		//클래스 이름으로 getInstance() 호출하여 참조 변수에 대입
+		Company myCompany1 = Company.getInstance();
+		Company myCompany2 = Company.getInstance();
+		//두 변수가 같은 주소인지 확인
+		System.out.println(myCompany1 == myCompany2);
+	}
+
+}
+```
