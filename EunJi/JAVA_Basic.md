@@ -522,3 +522,606 @@ public class OperationEx5 {
 
 }
 ```
+
+## 21. 비트 이동 연산자를 사용하여 연산하기
+```java
+package kr.java.chapter03;
+
+public class OperationEx5 {
+
+	public static void main(String[] args) {
+		//비트 이동 연산자를 사용하여 연산하기
+		//5를 8비트 2진수로 나타냄
+		int num=0B00000101;
+		
+		//왼쪽으로 2비트 이동 00010100(20)
+		System.out.println(num<<2);
+		//오른쪽으로 2비트 이동 00000001(1)
+		System.out.println(num>>2);
+		//오른쪽으로 2비트 이동 00000001(1)
+		System.out.println(num>>>2);
+		
+		//num에 값을 대입하지 않았으므로 비트 이동과
+		//관계없이 기존 값 그대로 출력
+		System.out.println(num);
+		
+		//왼쪽으로 2비트 이동한 값을 다시 num에 대입
+		num = num <<2;
+		System.out.println(num);
+	}
+
+}
+```
+
+## 22. 연습문제
+```java
+//Q1
+package kr.java.chapter03;
+
+public class Java_Teat03 {
+	public static void main(String[] args) {
+		int myAge=23;
+		int techerAge=38;
+		
+		boolean value=(myAge>25);
+		System.out.println(value);
+		
+		System.out.println(myAge<=25);
+		System.out.println(myAge==techerAge);
+		
+		char ch;
+		ch=(myAge>techerAge)?'T':'F';
+		
+		System.out.println(ch);
+	}
+
+}
+
+//Q2
+10
+
+//Q3
+10
+10
+11
+10
+
+//Q4
+F
+T
+F
+
+//Q5
+2
+10
+8
+-3
+
+//Q6
+18
+8
+2
+
+//Q7
+30
+```
+
+## 23. 나이에 따라 다른 문장 출력하기
+```java
+package kr.java.chapter04;
+
+public class IfExample1 {
+
+	public static void main(String[] args) {
+		// 나이에 따라 다른 문장 출력하기
+		int age = 7;
+		if(age >= 8) {
+			System.out.println("학교에 다닙니다.");
+		}
+		else {
+			System.out.println("학교에 다니지 않습니다.");
+		}
+		
+//1분 목습
+		char gender = 'F';
+		if(gender=='F') {
+			System.out.println("여성입니다.");
+		}
+		else {
+			System.out.println("남성입니다.");
+		}
+
+	}
+
+}
+```
+## 24. if-else if-else 문으로 입장료 계산하기
+```java
+package kr.java.chapter04;
+
+public class IfExample2 {
+
+	public static void main(String[] args) {
+		// if-else if-else 문으로 입장료 계산하기
+		int age = 9;
+		int charge;
+		
+		if(age<8) {
+			charge=1000;
+			System.out.println("취학 전 아동입니다.");
+		}
+		else if(age<14) {
+			charge=2000;
+			System.out.println("초등학생 입니다.");
+		}
+		else if(age<20) {
+			charge=2500;
+			System.out.println("중,고등학생입니다.");
+		}
+		else if(age>=60) {
+			charge=0;
+			System.out.println("경로우대입니다.");
+		}
+		else {
+			charge=3000;
+			System.out.println("일반인입니다.");
+		}
+		System.out.println("입장료는"+charge+"원 입니다.");
+
+	}
+
+}
+```
+
+## 25. 나혼자코딩
+```java
+package kr.java.chapter04;
+
+import java.util.*;
+
+public class IfExample2_2 {
+
+	public static void main(String[] args) {
+		// 성적에 따라 학점 부여하기
+		Scanner scanner = new Scanner(System.in);
+		int score = scanner.nextInt();
+		char grade;
+		
+		if(100<score) {
+			System.out.println("점수를 잘못 입력!");
+		}
+		else if(score>=90) {
+			grade = 'A';
+			System.out.println(grade);
+		}
+		else if(score>=80) {
+			grade = 'B';
+			System.out.println(grade);
+		}
+		else if(score>=70) {
+			grade = 'C';
+			System.out.println(grade);
+		}
+		else if(score>=60) {
+			grade = 'D';
+			System.out.println(grade);
+		}
+		else{
+			grade = 'F';
+			System.out.println(grade);
+		}
+		
+	}
+
+}
+```
+
+## 26. switch-case문 예제
+```java
+ackage kr.java.chapter04;
+
+public class SwitchCase {
+
+	public static void main(String[] args) {
+		//switch-case문 예제
+		int ranking = 1;
+		char medalColor;
+		
+		switch(ranking) {
+			case 1 : medalColor = 'G';
+					break;
+			case 2 : medalColor = 'S';
+					break;
+			case 3 : medalColor = 'B';
+					break;
+			default:
+				medalColor = 'A';
+		}
+		System.out.println(ranking+"등 메달의 색깔은"
+				+ medalColor + "입니다.");
+
+	}
+
+}
+```
+
+## 27. switch-case문 예제2
+```java
+package kr.java.chapter04;
+
+public class SwitchCase2 {
+
+	public static void main(String[] args) {
+		//switch-case문 예제2
+		String medal = "Gold";
+		
+		switch(medal) {
+			case "Gold" :
+				System.out.println("금메달입니다.");
+				break;
+			case "Silver" :
+				System.out.println("은메달입니다.");
+				break;
+			case "Bronze" :
+				System.out.println("동메달입니다.");
+				break;
+			default :
+				System.out.println("메달이 없습니다.");
+				break;
+		}
+
+	}
+
+}
+```
+
+## 28. 나혼자 코딩
+```java
+package kr.java.chapter04;
+
+public class SwitchCase3 {
+
+	public static void main(String[] args) {
+		// 나혼자 코딩
+		int floor = 5;
+		
+		switch(floor) {
+			case 1 :
+				System.out.println("1층 약국 입니다.");
+				break;
+			case 2 :
+				System.out.println("2층 정형외과 입니다.");
+				break;
+			case 3 :
+				System.out.println("3층 피부과 입니다.");
+				break;
+			case 4 :
+				System.out.println("4층 치과 입니다.");
+				break;
+			case 5 :
+				System.out.println("5층 헬스클럽 입니다.");
+				break;
+			default :
+				System.out.println("층수를 잘못눌렀습니다.");
+				break;
+		}
+
+	}
+
+}
+```
+
+## 29. 1부터 10까지 더하기
+```java
+package kr.java.chapter04;
+
+public class BasicLoop {
+
+	public static void main(String[] args) {
+		// 1부터 10까지 더하기
+		int num = 1;
+		
+		num += 2;
+		num += 3;
+		num += 4;
+		num += 5;
+		num += 6;
+		num += 7;
+		num += 8;
+		num += 9;
+		num += 10;
+
+		System.out.println("1부터 10까지의 합은 "+num+" 입니다.");
+	}
+
+}
+```
+
+## 30. while문 활용하여 1부터 10까지 더하기
+```java
+package kr.java.chapter04;
+
+public class WhileExample1 {
+
+	public static void main(String[] args) {
+		// while문 활용하여 1부터 10까지 더하기
+		int num = 1;
+		int sum = 0;
+		
+		while(num<=10) { //num 값이 10보다 작거나 같을 동안
+			sum+=num;	//합계를 뜻하는 sum에 num을 더하고
+			num++;		//num에 1씩 더해 나감
+		}
+		System.out.println("1부터 10까지의 합은"
+				+sum+"입니다.");
+	}
+
+}
+```
+
+## 31. do-while 문 예제
+```java
+package kr.java.chapter04;
+
+public class DoWhileExample {
+
+	public static void main(String[] args) {
+		// do-while 문 예제
+		int num = 1;
+		int sum = 0;
+		
+		do {
+			sum += num;
+			num++;
+		}while(num<=10);
+		
+		System.out.println("1부터 10까지의 합은"
+				+sum+"입니다.");
+	}
+
+}
+```
+
+## 32. for문 예제
+```java
+package kr.java.chapter04;
+
+public class ForExample1 {
+
+	public static void main(String[] args) {
+		// for문 예제
+		int i;
+		int sum;
+		
+		for(i=1,sum=0; i<=10; i++) {
+			sum+=i;
+		}
+		System.out.println("1부터 10까지의 합은 "
+				+sum+"입니다.");
+	}
+
+}
+```
+
+## 33. 나혼자코딩
+```java
+package kr.java.chapter04;
+
+public class ForExample2 {
+
+	public static void main(String[] args) {
+		// 나혼자코딩
+		int i;
+		
+		for(i=1; i<=10; i++) {
+			System.out.println("안녕하세요"+i);
+		}
+
+	}
+
+}
+```
+
+## 34. 중첩된 반복문
+```java
+package kr.java.chapter04;
+
+public class NestedLoop {
+
+	public static void main(String[] args) {
+		// 중첩된 반복문
+		int dan;
+		int times;
+		
+		for(dan=2; dan<=9; dan++) { //2단부터 9단까지 반복하는 외부 반복문
+			for(times=1; times<=9; times++) { //각 단에서 1~9를 곱하는 내부 반복문
+				System.out.println(dan+"X"+times+"="
+						+dan*times);
+			}
+			System.out.println( ); //한 줄 띄워서 출력
+		}
+
+	}
+
+}
+```
+
+## 35. Continue문 예제
+```java
+package kr.java.chapter04;
+
+public class ContinueExample {
+
+	public static void main(String[] args) {
+		// Continue문 예제
+		int total = 0;
+		int num;
+		
+		for(num=1; num<=100; num++) {	//100까지 반복
+			if(num%2==0) {				//num 값이 짝수인 경우
+				continue;				//이후 수행을 생략하고 num++ 수행
+			}
+			total+=num;					//num 값이 홀수인 경우에만 수행
+		}
+		System.out.println("1부터 100까지의 홀수의 합은 "
+				+total+"입니다.");
+	}
+
+}
+```
+
+## 36. break문 예제1
+```java
+package kr.java.chapter04;
+
+public class BreakExample1 {
+
+	public static void main(String[] args) {
+		// break문 예제1
+		int sum=0;
+		int num=0;
+		
+		for(num=0; sum<100; num++) {
+			sum+=num;
+		}
+		System.out.println("num : "+num);
+		System.out.println("sum : "+sum);
+	}
+
+}
+```
+
+## 37. break문 예제2
+```java
+package kr.java.chapter04;
+
+public class BreakExample2 {
+
+	public static void main(String[] args) {
+		//break문 예제2
+		int sum=0;
+		int num=0;
+		
+		for(num=0; ; num++) {
+			sum+=num;
+			if(sum>=100) {		//sum이 100보다 크거나 같을 때(종료조건)
+				break;			//반복문 중단
+			}
+		}
+		System.out.println("num : "+num);
+		System.out.println("sum : "+sum);
+	}
+
+}
+```
+
+## 38. 연습문제
+```java
+//Q1
+int num1 = 10;
+		int num2 = 2;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("사칙연산 +,-,*,/ 중 1개 입력!");
+		char operator = sc.nextLine().charAt(0);
+		
+		switch(operator)
+		{
+		case '+':
+			operator = '+';
+			break;
+		case '-':
+			operator = '-';
+			break;
+		case '*':
+			operator = '*';
+			break;
+		case '/':
+			operator = '/';
+			break;
+		}
+		
+		if(operator == '+')
+		{
+			System.out.println(num1 + num2);
+		}
+		else if(operator == '-')
+		{
+			System.out.println(num1 - num2);
+		}
+		else if(operator == '*')
+		{
+			System.out.println(num1 * num2);
+		}
+		else if(operator == '/')
+		{
+			System.out.println(num1 / num2);
+		}
+		else
+			System.out.println("잘못입력!");
+
+//Q2
+for(int i = 1; i<10; i++ )
+		{
+			if(i%2 == 1)
+				continue;
+			for(int y = 1; y<10; y++)
+			{
+				System.out.println(i + " * " + y + "=" + i*y);
+			}
+			System.out.println("\t");
+		}
+
+//Q3
+for(int i = 1; i<10; i++ )
+		{
+			for(int y = 1; y<10; y++)
+			{
+				if(i < y)
+					break;
+			
+				System.out.println(i + " * " + y + "=" + i*y);
+			}
+			System.out.println("\t");
+		}
+
+//Q4
+for(int i = 0; i <= 4; i++)
+		{
+			for(int j = 0; j < 4-i; j++)
+			{
+				System.out.print(" ");
+			}
+			for(int j = 0; j < i*2-1 ; j++) 
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+//Q5
+for(int i = 0; i <= 4; i++)
+		{
+			for(int j = 0; j < 4-i; j++)
+			{
+				System.out.print(" ");
+			}
+			for(int j = 0; j < i*2-1 ; j++) 
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for(int i = 3; i >= 1; i--)
+		{
+			for(int j = 0; j < 4-i; j++)
+			{
+				System.out.print(" ");
+			}
+			for(int j = 0; j < i*2-1 ; j++) 
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+```
