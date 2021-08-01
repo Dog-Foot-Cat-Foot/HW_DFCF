@@ -8,6 +8,7 @@ public class Ex04_AutoCloseTest {
 		// <1> try-with-resources문 사용
 		//	try( A a = new A(); B b = new B()){ ~ } catch(Exception e) { ~ }
 		//	사용할 리소스 선언
+		//	리소스를 여러 개 생성해야 한다면 세미 콜론(;)으로 구분한다.
 		//------------------------------------------
 		try(AutoCloseObj obj = new AutoCloseObj()){		// <1>
 		} catch(Exception e) {
