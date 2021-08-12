@@ -6,3 +6,6 @@
 
 ### JQuery notion 정리 🔸
 [https://sumptuous-othnielia-aa6.notion.site/JQuery-8b1ca64716764db79577823dd9c41e17](https://sumptuous-othnielia-aa6.notion.site/JQuery-8b1ca64716764db79577823dd9c41e17)
+
+### JSP.Spring notion 정리 🌮
+[https://sumptuous-othnielia-aa6.notion.site/JSP-Spring-b83e346b9d1c4fffbdd4fc564eea714e](https://sumptuous-othnielia-aa6.notion.site/JSP-Spring-b83e346b9d1c4fffbdd4fc564eea714e)
